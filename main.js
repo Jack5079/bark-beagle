@@ -1,6 +1,9 @@
 /* global localStorage, Audio */
 var beagleCount = 0
-if (localStorage.getItem('beagleSave')) beagleCount = JSON.parse(localStorage.getItem('beagleSave'))
+if (localStorage.getItem('beagleSave')) {
+  beagleCount = JSON.parse(localStorage.getItem('beagleSave'))
+  document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount
+}
 document.body.onclick = () => {
   var a = new Audio('sound.mp3')
   a.play()
