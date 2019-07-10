@@ -6,7 +6,7 @@ if (localStorage.getItem('beagleSave')) { // If there's a save
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
 }
 
-function beagle () { // When the user clicks
+function inc () { // When the user clicks
   var a = new Audio('sound.mp3') // Init the sound
   a.play() // Play that sound
   beagleCount++ // Add to the beagle count
