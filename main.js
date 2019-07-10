@@ -17,5 +17,5 @@ document.body.onmouseup = () => { // When the user clicks
   setTimeout(function () {
     document.getElementById('beagle').style.transform = 'rotate(90deg)'
     document.getElementById('beagle').src = './beg.jpg'
-  }, 500)
+  }, 1000)
 }
