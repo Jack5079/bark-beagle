@@ -12,4 +12,8 @@ document.body.onmouseup = () => { // When the user clicks
   beagleCount++ // Add to the beagle count
   localStorage.setItem('beagleSave', beagleCount) // Save the counter
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
+  document.getElementById('beagle').src = './bark.jpg'
+  setTimeout(function () {
+    document.getElementById('beagle').src = './beg.jpg'
+  }, 500)
 }
