@@ -5,6 +5,7 @@ if (window.localStorage.getItem('beagleSave')) { // If there's a save
 }
 
 function inc () { // When the user clicks
+  if (window.hasOwnProperty('revert')) clearTimeout(revert)
   var a = new window.Audio('sound.mp3') // Init the sound
   a.play() // Play that sound
   beagleCount++ // Add to the beagle count
@@ -12,7 +13,7 @@ function inc () { // When the user clicks
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
   document.getElementById('beagle').style.transform = 'rotate(180deg)' // Because the barking picture is rotated in-file, we must update the rotation to account for this.
   document.getElementById('beagle').src = './bark.jpg' // Switch to the barking picture
-  setTimeout(function () {
+  var revert = setTimeout(function () {
     document.getElementById('beagle').style.transform = 'rotate(90deg)' // Revert the rotation
     document.getElementById('beagle').src = './beg.jpg' // Switch to the begging picture (the default)
   }, 1000)
