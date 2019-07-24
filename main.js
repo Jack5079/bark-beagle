@@ -14,18 +14,16 @@ document.querySelector('#beagle').onclick = function () { // When the user click
     dog.style.zIndex = '100'
     document.body.appendChild(dog)
     setTimeout(function () { dog.remove() }, 5000)
-    let a = new window.Audio('sound.mp3') // Init the sound
-    a.play() // Play that sound
     beagleCount += 100 // Add 100 to the beagle count
-    window.localStorage.setItem('beagleSave', beagleCount) // Save the counter
-    document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
   } else {
     let a = new window.Audio('sound.mp3') // Init the sound
     a.play() // Play that sound
     beagleCount++ // Add to the beagle count
-    window.localStorage.setItem('beagleSave', beagleCount) // Save the counter
-    document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
   }
+  let a = new window.Audio('sound.mp3') // Init the sound
+  a.play() // Play that sound
+  window.localStorage.setItem('beagleSave', beagleCount) // Save the counter
+  document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
   clearTimeout(window.revert)
   document.getElementById('beagle').style.transform = 'rotate(180deg)' // Because the barking picture is rotated in-file, we must update the rotation to account for this.
   document.getElementById('beagle').src = './bark.jpg' // Switch to the barking picture
