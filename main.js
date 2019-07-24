@@ -4,7 +4,7 @@ if (window.localStorage.getItem('beagleSave')) { // If there's a save
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
 }
 
-function inc () { // When the user clicks
+document.querySelector('#beagle').onclick = function () { // When the user clicks
   clearTimeout(window.revert)
   var a = new window.Audio('sound.mp3') // Init the sound
   a.play() // Play that sound

@@ -37,31 +37,36 @@
     <meta property="og:image" content="https://i.ytimg.com/vi/2ZIpFytCSVc/maxresdefault.jpg" />
     <meta name="theme-color" content="#77533A">
     <title>Bruh Beagle 2</title>
-    <style>
-      @font-face {
-        font-family: 'Raleway';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-    </style>
     <link rel="stylesheet" href="./dark.css" media="(prefers-color-scheme: dark)">
   </head>
 
   <body>
     <main>
       <!-- The actual beagle picture. Every time the user clicks, it calls the function inc. It is fixed in the center, behind everything else. It resizes to fit the screen.  -->
-      <img onclick="inc()" id="beagle" src="./beg.jpg" alt="A very cute beagle."
+      <img id="beagle" src="./beg.jpg" alt="A very cute beagle."
         style="transform: rotate(90deg); position: fixed; width: 100vw; height: 100vh; z-index: -100;">
       <span id="counter" style="bottom: 5%; right: 1%; font-family: monospace; font-size: 2em;">Bruh count: 0</span>
     </main>
     <footer>
-      <!-- Jack5079 watermark -->
-      <a href="//j.mp/g_h" style="user-select: none; text-decoration: none; position: fixed; bottom: 5%; left: 1%;">a
-        <span style="font-weight: bold; letter-spacing: -0.1em; font-family: 'Raleway', sans-serif;">jack5079</span>
-        game</a>
+      <!-- Jack5079 button -->
+      <details style="  width: 10vw;
+      position: fixed;
+      top: 1%;
+      right: 1%;">
+        <summary> <img alt="Created by Jack5079" width="50%" src="//jack5079.github.io/images/icon.png"
+            style="cursor:pointer;border-radius:50%;"></summary>
+        <div style="  font-size: 1vw;
+      text-align: center;
+      background: darkslategray;
+      color: white;
+      border-radius: 25px;
+    
+      box-shadow: 10px 5px 5px black;">
+          <h3>Bruh Beagle 2</h3>
+          <p>bruh beagle moment</p>
+          <a href="//j.mp/g_h">Created by Jack5079</a>
+        </div>
+      </details>
     </footer>
     <!-- Link to the code -->
     <script src="./main.js" defer></script>
