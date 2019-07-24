@@ -16,12 +16,9 @@ document.querySelector('#beagle').onclick = function () { // When the user click
     setTimeout(function () { dog.remove() }, 5000)
     beagleCount += 100 // Add 100 to the beagle count
   } else {
-    let a = new window.Audio('sound.mp3') // Init the sound
-    a.play() // Play that sound
     beagleCount++ // Add to the beagle count
   }
-  let a = new window.Audio('sound.mp3') // Init the sound
-  a.play() // Play that sound
+  new window.Audio('sound.mp3').play()
   window.localStorage.setItem('beagleSave', beagleCount) // Save the counter
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
   clearTimeout(window.revert)
