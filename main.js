@@ -1,4 +1,4 @@
-import J from 'jack5079.github.io/jay/jay.mjs' // import my funny library
+import J from 'https://jack5079.github.io/jay/jay.mjs' // import my funny library
 
 let beagleCount = 0 // Init the counter
 if (window.localStorage.getItem('beagleSave')) { // If there's a save
