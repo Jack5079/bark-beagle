@@ -15,7 +15,7 @@ document.querySelector('#beagle').onclick = function () { // When the user click
     dog.style.zIndex = '100'
     document.body.appendChild(dog)
     setTimeout(function () { dog.remove() }, 5000)
-    beagleCount += 100 // Add 100 to the beagle count
+    beagleCount += BigInt(100) // Add 100 to the beagle count
   } else {
     beagleCount++ // Add to the beagle count
   }
