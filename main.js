@@ -1,4 +1,5 @@
-let beagleCount = 0 // Init the counter
+/* global BigInt */
+let beagleCount = BigInt(0) // Init the counter
 if (window.localStorage.getItem('beagleSave')) { // If there's a save
   beagleCount = JSON.parse(window.localStorage.getItem('beagleSave')) // Change the count to the save
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
