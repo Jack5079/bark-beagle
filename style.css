@@ -16,6 +16,6 @@ button {
   height: 1em;
 }
 
-#list[open] {
-  height: 10em;
+#list[open] { 
+  height: 80vh;
 }
