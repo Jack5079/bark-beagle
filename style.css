@@ -1,0 +1,21 @@
+button {
+  background: rgba(0, 0, 0, 0.5);
+  border: 0;
+  border-radius: 1em;
+  color: white;
+}
+
+#list {
+  padding: 1em; background: rgba(0, 0, 0, 0.5); color: white;
+  width: 20%;
+  border-radius: 1em;
+  transition: height 1s;
+}
+
+#list:not([open]) {
+  height: 1em;
+}
+
+#list[open] {
+  height: 10em;
+}

@@ -1,30 +1,37 @@
-/* global BigInt */
-let beagleCount = BigInt(0) // Init the counter
-if (window.localStorage.getItem('beagleSave')) { // If there's a save
-  beagleCount = JSON.parse(window.localStorage.getItem('beagleSave')) // Change the count to the save
-  document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
-}
+/* global localStorage, Audio */
+let beagleCount = 0 // Init the counter
+let strength = 1
+let biggerBarkCost = 30
+if ('beagleSave' in localStorage) beagleCount = JSON.parse(localStorage.getItem('beagleSave'))
+if ('beagleStr' in localStorage) strength = JSON.parse(localStorage.getItem('beagleStr'))
+if ('biggerBarkCost' in localStorage) biggerBarkCost = JSON.parse(localStorage.getItem('biggerBarkCost'))
 
-const randomnum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
+document.querySelector('#biggerBarkCost').innerText = `${biggerBarkCost} bruhs`
+document.querySelector('#strength').innerText = `Bruh strength: ${strength}`
 
 document.querySelector('#beagle').onclick = function () { // When the user clicks
-  if (randomnum(0, 200) === 50) {
-    const dog = document.createElement('dialog')
-    dog.innerText = 'SUPER RARE BRUH: +100 BRUHS!'
-    dog.open = true
-    dog.style.zIndex = '100'
-    document.body.appendChild(dog)
-    setTimeout(function () { dog.remove() }, 5000)
-    beagleCount += BigInt(100) // Add 100 to the beagle count
-  } else {
-    beagleCount++ // Add to the beagle count
-  }
-  new window.Audio('sound.mp3').play()
-  window.localStorage.setItem('beagleSave', beagleCount) // Save the counter
+  beagleCount += strength // Add to the beagle count
+  new Audio('sound.mp3').play()
+  localStorage.setItem('beagleSave', beagleCount) // Save the counter
   document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
   clearTimeout(window.revert)
   document.getElementById('beagle').src = './bark.png' // Switch to the barking picture
   window.revert = setTimeout(function () {
     document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
   }, 1000)
+}
+
+document.querySelector('#biggerBark').onclick = () => {
+  if (beagleCount >= biggerBarkCost) {
+    beagleCount -= biggerBarkCost
+    strength++
+    document.querySelector('#strength').innerText = `Bruh strength: ${strength}`
+    biggerBarkCost *= 2
+    document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
+    document.querySelector('#biggerBarkCost').innerText = `${biggerBarkCost} bruhs`
+    localStorage.setItem('beagleStr', strength)
+    localStorage.setItem('beagleSave', beagleCount) // Save the counter
+    localStorage.setItem('biggerBarkCost', biggerBarkCost)
+  }
 }
