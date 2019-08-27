@@ -7,15 +7,27 @@ button {
 
 #list {
   padding: 1em; background: rgba(0, 0, 0, 0.5); color: white;
-  width: 20%;
+  width: 6em;
+  position: fixed;
   border-radius: 1em;
-  transition: height 1s;
-}
-
-#list:not([open]) {
-  height: 1em;
+    top: 3em;
+  left: 0.5em;
+    height: 1em;
+  backdrop-filter: blur(0px);
+  transition: height 1s, backdrop-filter 0.5s, width 1s, top 1s, left 1s, border-radius 1s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #list[open] { 
-  height: 80vh;
+  border-radius: 0;
+    top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(50px);
+}
+
+
+.counter {
+  font-family: monospace; font-size: 2em; background: rgba(255, 255, 255, 0.5); padding: 0.1em;
 }
