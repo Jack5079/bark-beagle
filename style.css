@@ -29,5 +29,10 @@ button {
 
 
 .counter {
-  font-family: monospace; font-size: 2em; background: rgba(255, 255, 255, 0.5); padding: 0.1em;
+  font-family: monospace; 
+  font-size: 2em;
+   padding: 0.1em;
+   color: white;
+   border-radius: 0.5em;
+   background: rgba(0, 0, 0, 0.5);
 }
