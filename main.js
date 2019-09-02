@@ -19,7 +19,7 @@ document.querySelector('#beagle').onclick = function () { // When the user click
   if ((Math.floor(Math.random() * 50) + 1) === 20) {
     document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
   } else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture
-  window.revert = setTimeout(function () {
+  window.revert = setTimeout(() => {
     document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
   }, 1000)
 }
