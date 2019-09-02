@@ -14,7 +14,7 @@ document.querySelector('#beagle').onclick = function () { // When the user click
   beagleCount += strength // Add to the beagle count
   new Audio('sound.mp3').play()
   localStorage.setItem('beagleSave', beagleCount) // Save the counter
-  document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Update the displayed count
+  document.getElementById('counter').innerText = `Bruh count: ${beagleCount}` // Show that count to the user
   clearTimeout(window.revert)
   if ((Math.floor(Math.random() * 50) + 1) === 20) {
     document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
@@ -30,7 +30,7 @@ document.querySelector('#biggerBark').onclick = () => {
     strength++
     document.querySelector('#strength').innerText = `Bruh strength: ${strength}`
     biggerBarkCost *= 2
-    document.getElementById('counter').innerText = 'Bruh count: ' + beagleCount // Show that count to the user
+    document.getElementById('counter').innerText = `Bruh count: ${beagleCount}` // Show that count to the user
     document.querySelector('#biggerBarkCost').innerText = `${biggerBarkCost} bruhs`
     localStorage.setItem('beagleStr', strength)
     localStorage.setItem('beagleSave', beagleCount) // Save the counter
