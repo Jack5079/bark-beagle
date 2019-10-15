@@ -48,3 +48,55 @@ document.querySelector( '#biggerBark' ).addEventListener( 'click', () => {
     localStorage.setItem( 'biggerBarkCost', biggerBarkCost )
   }
 } )
+
+
+
+class Upgrade {
+  constructor () {
+    let holder = document.createElement( 'div' )
+
+    let title = document.createElement( 'title' )
+    title.innerText = this.meta().title
+    holder.appendChild( title )
+
+    let desc = document.createElement( 'p' )
+    title.innerText = this.meta().desc
+    holder.appendChild( desc )
+
+    let price = document.createElement( 'span' )
+    price.innerText = this.meta().startprice
+    let button = document.createElement( 'button' )
+    button.innerText = 'Buy'
+    button.addEventListener( 'click', () => {
+      if ( beagleCount > price.innerText ) {
+        inc( -parseInt( price.innerText ) )
+        this.onbuy( price )
+      }
+    } )
+    holder.appendChild( button )
+    holder.appendChild( price )
+    document.querySelector( 'details' ).appendChild( holder )
+    this.html = holder
+  }
+
+}
+class AutoClick extends Upgrade {
+  constructor () {
+    super()
+    // idk
+  }
+
+  onbuy ( costhtml ) {
+    costhtml.innerText = parseInt( costhtml.innerText ) * 1.5
+  }
+
+  meta () {
+    return {
+      name: 'Auto clicker',
+      desc: 'A cool new clicker',
+      startprice: 30
+    }
+  }
+}
+
+new AutoClick()
