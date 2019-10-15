@@ -41,3 +41,11 @@ button {
 .price:before {
   content: 'Costs '
 }
+
+#counter:before {
+  content: 'Bruh count: '
+}
+
+#strength:before {
+  content: 'Bruh strength: '
+}

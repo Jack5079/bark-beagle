@@ -10,7 +10,7 @@ let beagleCount = ( +localStorage.getItem( 'beagleSave' ) ) || 0 // Load the bea
 function inc ( amount ) {
   beagleCount += amount // Add to the beagle count
   localStorage.setItem( 'beagleSave', beagleCount ) // Save the counter
-  document.getElementById( 'counter' ).innerText = `Bruh count: ${ beagleCount }` // Show that count to the user
+  document.getElementById( 'counter' ).innerText = beagleCount // Show that count to the user
 }
 
 
@@ -84,13 +84,13 @@ let upgrades = [ // A list of upgrades.
     constructor () { // Runs on load.
       super() // MUST PUT SUPER FOR UPGRADES TO WORK
       this.strength = parseInt( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
-      document.getElementById( 'strength' ).innerText = `Bruh strength: ${ this.strength }` // Display strength
+      document.getElementById( 'strength' ).innerText = this.strength // Display strength
       document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } ) // Add the actual upgrade; this gives you the bigger bark.
     }
     onbuy ( price ) {
       this.price *= 1.5
       this.strength++
-      document.getElementById( 'strength' ).innerText = 'Bruh strength: ' + this.strength
+      document.getElementById( 'strength' ).innerText = this.strength
       localStorage.setItem( 'beagleStr', this.strength )
     }
 
