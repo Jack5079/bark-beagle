@@ -60,7 +60,7 @@ class Upgrade {
     holder.appendChild( title )
 
     let desc = document.createElement( 'p' )
-    title.innerText = this.meta().desc
+    desc.innerText = this.meta().desc
     holder.appendChild( desc )
 
     let price = document.createElement( 'span' )
