@@ -4,10 +4,8 @@ let strength = 1
 let biggerBarkCost = 30
 if ( 'beagleSave' in localStorage ) beagleCount = JSON.parse( localStorage.getItem( 'beagleSave' ) )
 if ( 'beagleStr' in localStorage ) strength = JSON.parse( localStorage.getItem( 'beagleStr' ) )
-if ( 'biggerBarkCost' in localStorage ) biggerBarkCost = JSON.parse( localStorage.getItem( 'biggerBarkCost' ) )
 
 document.getElementById( 'counter' ).innerText = 'Bruh count: ' + beagleCount // Show that count to the user
-document.querySelector( '#biggerBarkCost' ).innerText = `${ biggerBarkCost } bruhs`
 document.querySelector( '#strength' ).innerText = `Bruh strength: ${ strength }`
 
 /**
@@ -35,19 +33,6 @@ document.querySelector( '#beagle' ).addEventListener( 'click', e => { // When th
   }, 1000 )
 } )
 
-document.querySelector( '#biggerBark' ).addEventListener( 'click', () => {
-  if ( beagleCount >= biggerBarkCost ) {
-    beagleCount -= biggerBarkCost
-    strength++
-    document.querySelector( '#strength' ).innerText = `Bruh strength: ${ strength }`
-    biggerBarkCost *= 2
-    document.getElementById( 'counter' ).innerText = `Bruh count: ${ beagleCount }` // Show that count to the user
-    document.querySelector( '#biggerBarkCost' ).innerText = `${ biggerBarkCost } bruhs`
-    localStorage.setItem( 'beagleStr', strength )
-    localStorage.setItem( 'beagleSave', beagleCount ) // Save the counter
-    localStorage.setItem( 'biggerBarkCost', biggerBarkCost )
-  }
-} )
 
 
 
@@ -82,7 +67,7 @@ class Upgrade {
   }
 
 }
-class AutoClick extends Upgrade {
+class BiggerBark extends Upgrade {
   constructor () {
     super()
     // idk
@@ -90,15 +75,18 @@ class AutoClick extends Upgrade {
 
   onbuy ( costhtml ) {
     costhtml.innerText = parseInt( costhtml.innerText ) * 1.5
+    strength++
+    document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
+    localStorage.strength = strength
   }
 
   meta () {
     return {
-      name: 'Auto clicker',
-      desc: 'A cool new clicker',
+      name: 'Bigger Bark',
+      desc: 'Increases your bruh strength ( bruhs on click ) by one.',
       startprice: 30
     }
   }
 }
 
-new AutoClick()
+new BiggerBark()
