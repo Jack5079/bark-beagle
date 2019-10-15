@@ -38,59 +38,64 @@ document.querySelector( '#beagle' ).addEventListener( 'click', e => { // When th
 
 class Upgrade {
   constructor () {
-    let holder = document.createElement( 'div' )
+    this.html = document.createElement( 'div' )
 
     let title = document.createElement( 'h2' )
     title.innerText = this.meta().name
-    holder.appendChild( title )
+    this.html.appendChild( title )
 
     let desc = document.createElement( 'p' )
     desc.innerText = this.meta().desc
-    holder.appendChild( desc )
+    this.html.appendChild( desc )
 
     let price = document.createElement( 'span' )
     if ( this.meta().name.replace( / /g, '' ) in localStorage ) price.innerText = localStorage.getItem( this.meta().name )
     price.innerText = this.meta().startprice
 
     price.classList.add( 'price' )
-    holder.appendChild( price )
+    this.html.appendChild( price )
 
     let button = document.createElement( 'button' )
     button.innerText = 'Buy'
     button.addEventListener( 'click', () => {
       if ( beagleCount >= price.innerText ) {
         inc( -parseInt( price.innerText ) )
-        this.onbuy( price )
+        this.onbuy()
 
       }
     } )
-    holder.appendChild( button )
-    document.querySelector( 'details' ).appendChild( holder )
-    this.html = holder
+    this.html.appendChild( button )
+    document.querySelector( 'details' ).appendChild( this.html )
+    this.html = this.html
   }
 
+  get price () {
+    return +this.html.querySelector( 'span' ).innerText
+  }
+
+  set price ( amount ) {
+    this.html.querySelector( 'span' ).innerText = +amount
+  }
 }
-class BiggerBark extends Upgrade {
-  constructor () {
-    super()
-    // idk
-  }
+let upgrades = [
+  class BiggerBark extends Upgrade {
 
-  onbuy ( costhtml ) {
-    costhtml.innerText = parseInt( costhtml.innerText ) * 1.5
-    strength++
-    document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
-    localStorage.setItem( 'beagleStr', strength )
-    localStorage.setItem( this.meta().name.replace( / /g, '' ), costhtml.innerText )
-  }
+    onbuy ( price ) {
+      this.price *= 1.5
+      strength++
+      document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
+      localStorage.setItem( 'beagleStr', strength )
+      localStorage.setItem( this.meta().name.replace( / /g, '' ), this.price )
+    }
 
-  meta () {
-    return {
-      name: 'Bigger Bark',
-      desc: 'Increases your bruh strength ( bruhs on click ) by one.',
-      startprice: 30
+    meta () {
+      return {
+        name: 'Bigger Bark',
+        desc: 'Increases your bruh strength ( bruhs on click ) by one.',
+        startprice: 30
+      }
     }
   }
-}
+]
 
-new BiggerBark()
+upgrades = upgrades.map( cl => new cl )
