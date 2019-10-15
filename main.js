@@ -49,16 +49,19 @@ class Upgrade {
     holder.appendChild( desc )
 
     let price = document.createElement( 'span' )
+    if ( this.meta().name in localStorage ) price.innerText = localStorage.getItem( this.meta().name )
     price.innerText = this.meta().startprice
+
     price.classList.add( 'price' )
     holder.appendChild( price )
 
     let button = document.createElement( 'button' )
     button.innerText = 'Buy'
     button.addEventListener( 'click', () => {
-      if ( beagleCount > price.innerText ) {
+      if ( beagleCount >= price.innerText ) {
         inc( -parseInt( price.innerText ) )
         this.onbuy( price )
+
       }
     } )
     holder.appendChild( button )
@@ -77,7 +80,8 @@ class BiggerBark extends Upgrade {
     costhtml.innerText = parseInt( costhtml.innerText ) * 1.5
     strength++
     document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
-    localStorage.strength = strength
+    localStorage.setItem( 'beagleStr', strength )
+    localStorage.setItem( this.meta().name, price.innerText )
   }
 
   meta () {
