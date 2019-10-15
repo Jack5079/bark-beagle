@@ -1,12 +1,5 @@
 /* global localStorage, Audio */
-let beagleCount = 0 // Init the counter
-let strength = 1
-let biggerBarkCost = 30
-if ( 'beagleSave' in localStorage ) beagleCount = JSON.parse( localStorage.getItem( 'beagleSave' ) )
-if ( 'beagleStr' in localStorage ) strength = JSON.parse( localStorage.getItem( 'beagleStr' ) )
-
-document.getElementById( 'counter' ).innerText = 'Bruh count: ' + beagleCount // Show that count to the user
-document.querySelector( '#strength' ).innerText = `Bruh strength: ${ strength }`
+let beagleCount = JSON.parse( localStorage.getItem( 'beagleSave' ) ) || 0 // Load the beagle count
 
 /**
  * Increases the bruh counter.
@@ -20,7 +13,15 @@ function inc ( amount ) {
   document.getElementById( 'counter' ).innerText = `Bruh count: ${ beagleCount }` // Show that count to the user
 }
 
-document.querySelector( '#beagle' ).addEventListener( 'click', e => { // When the user clicks
+
+inc( 0 ) // Load the counter
+
+let strength = JSON.parse( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
+document.querySelector( '#strength' ).innerText = `Bruh strength: ${ strength }`
+
+
+
+document.getElementById( 'beagle' ).addEventListener( 'click', e => { // When the user clicks
 
   new Audio( 'sound.mp3' ).play()
   inc( strength )
@@ -77,15 +78,15 @@ class Upgrade {
     this.html.querySelector( 'span' ).innerText = +amount
   }
 }
-let upgrades = [
+
+let upgrades = [ // A list of upgrades.
   class BiggerBark extends Upgrade {
 
     onbuy ( price ) {
       this.price *= 1.5
       strength++
-      document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
+      document.getElementById( 'strength' ).innerText = 'Bruh strength: ' + strength
       localStorage.setItem( 'beagleStr', strength )
-      localStorage.setItem( this.meta().name.replace( / /g, '' ), this.price )
     }
 
     meta () {
@@ -98,4 +99,4 @@ let upgrades = [
   }
 ]
 
-upgrades = upgrades.map( cl => new cl )
+upgrades = upgrades.map( cl => new cl ) // Load all of the upgrades.
