@@ -55,8 +55,8 @@ class Upgrade {
   constructor () {
     let holder = document.createElement( 'div' )
 
-    let title = document.createElement( 'title' )
-    title.innerText = this.meta().title
+    let title = document.createElement( 'h1' )
+    title.innerText = this.meta().name
     holder.appendChild( title )
 
     let desc = document.createElement( 'p' )
