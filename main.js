@@ -1,5 +1,5 @@
 /* global localStorage, Audio */
-let beagleCount = JSON.parse( localStorage.getItem( 'beagleSave' ) ) || 0 // Load the beagle count
+let beagleCount = ( +localStorage.getItem( 'beagleSave' ) ) || 0 // Load the beagle count
 
 /**
  * Increases the bruh counter.
@@ -15,27 +15,6 @@ function inc ( amount ) {
 
 
 inc( 0 ) // Load the counter
-
-let strength = JSON.parse( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
-document.querySelector( '#strength' ).innerText = `Bruh strength: ${ strength }`
-
-
-
-document.getElementById( 'beagle' ).addEventListener( 'click', e => { // When the user clicks
-
-  new Audio( 'sound.mp3' ).play()
-  inc( strength )
-  clearTimeout( window.revert )
-  if ( ( Math.floor( Math.random() * 50 ) + 1 ) === 20 ) {
-    document.getElementById( 'beagle' ).src = './bagel.jpg' // Switch to the bagel picture
-  } else document.getElementById( 'beagle' ).src = './bark.png' // Switch to the barking picture
-  window.revert = setTimeout( () => {
-    document.getElementById( 'beagle' ).src = './beg.png' // Switch to the begging picture (the default)
-  }, 1000 )
-} )
-
-
-
 
 class Upgrade {
   constructor () {
@@ -82,11 +61,17 @@ class Upgrade {
 let upgrades = [ // A list of upgrades.
   class BiggerBark extends Upgrade {
 
+    constructor () { // Runs on load.
+      super() // MUST PUT SUPER FOR UPGRADES TO WORK
+      this.strength = parseInt( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
+      document.getElementById( 'strength' ).innerText = `Bruh strength: ${ this.strength }` // Display strength
+      document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } )
+    }
     onbuy ( price ) {
       this.price *= 1.5
-      strength++
-      document.getElementById( 'strength' ).innerText = 'Bruh strength: ' + strength
-      localStorage.setItem( 'beagleStr', strength )
+      this.strength++
+      document.getElementById( 'strength' ).innerText = 'Bruh strength: ' + this.strength
+      localStorage.setItem( 'beagleStr', this.strength )
     }
 
     meta () {
@@ -100,3 +85,17 @@ let upgrades = [ // A list of upgrades.
 ]
 
 upgrades = upgrades.map( cl => new cl ) // Load all of the upgrades.
+
+
+document.getElementById( 'beagle' ).addEventListener( 'click', e => { // When the user clicks
+
+  new Audio( 'sound.mp3' ).play()
+  inc( 1 )
+  clearTimeout( window.revert )
+  if ( ( Math.floor( Math.random() * 50 ) + 1 ) === 20 ) {
+    document.getElementById( 'beagle' ).src = './bagel.jpg' // Switch to the bagel picture
+  } else document.getElementById( 'beagle' ).src = './bark.png' // Switch to the barking picture
+  window.revert = setTimeout( () => {
+    document.getElementById( 'beagle' ).src = './beg.png' // Switch to the begging picture (the default)
+  }, 1000 )
+} )
