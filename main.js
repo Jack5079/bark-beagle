@@ -65,7 +65,7 @@ let upgrades = [ // A list of upgrades.
       super() // MUST PUT SUPER FOR UPGRADES TO WORK
       this.strength = parseInt( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
       document.getElementById( 'strength' ).innerText = `Bruh strength: ${ this.strength }` // Display strength
-      document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } )
+      document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } ) // Add the actual upgrade; this gives you the bigger bark.
     }
     onbuy ( price ) {
       this.price *= 1.5
