@@ -55,7 +55,7 @@ class Upgrade {
   constructor () {
     let holder = document.createElement( 'div' )
 
-    let title = document.createElement( 'h1' )
+    let title = document.createElement( 'h2' )
     title.innerText = this.meta().name
     holder.appendChild( title )
 
@@ -65,6 +65,9 @@ class Upgrade {
 
     let price = document.createElement( 'span' )
     price.innerText = this.meta().startprice
+    price.classList.add( 'price' )
+    holder.appendChild( price )
+
     let button = document.createElement( 'button' )
     button.innerText = 'Buy'
     button.addEventListener( 'click', () => {
@@ -74,7 +77,6 @@ class Upgrade {
       }
     } )
     holder.appendChild( button )
-    holder.appendChild( price )
     document.querySelector( 'details' ).appendChild( holder )
     this.html = holder
   }
