@@ -81,7 +81,7 @@ class BiggerBark extends Upgrade {
     strength++
     document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
     localStorage.setItem( 'beagleStr', strength )
-    localStorage.setItem( this.meta().name, price.innerText )
+    localStorage.setItem( this.meta().name, costhtml.innerText )
   }
 
   meta () {
