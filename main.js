@@ -22,7 +22,7 @@ function inc ( amount ) {
   document.getElementById( 'counter' ).innerText = `Bruh count: ${ beagleCount }` // Show that count to the user
 }
 
-document.querySelector( '#beagle' ).onclick = function () { // When the user clicks
+document.querySelector( '#beagle' ).addEventListener( 'click', e => { // When the user clicks
 
   new Audio( 'sound.mp3' ).play()
   inc( strength )
@@ -33,9 +33,9 @@ document.querySelector( '#beagle' ).onclick = function () { // When the user cli
   window.revert = setTimeout( () => {
     document.getElementById( 'beagle' ).src = './beg.png' // Switch to the begging picture (the default)
   }, 1000 )
-}
+} )
 
-document.querySelector( '#biggerBark' ).onclick = () => {
+document.querySelector( '#biggerBark' ).addEventListener( 'click', () => {
   if ( beagleCount >= biggerBarkCost ) {
     beagleCount -= biggerBarkCost
     strength++
@@ -47,4 +47,4 @@ document.querySelector( '#biggerBark' ).onclick = () => {
     localStorage.setItem( 'beagleSave', beagleCount ) // Save the counter
     localStorage.setItem( 'biggerBarkCost', biggerBarkCost )
   }
-}
+} )
