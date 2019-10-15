@@ -49,7 +49,7 @@ class Upgrade {
     this.html.appendChild( desc )
 
     let price = document.createElement( 'span' )
-    if ( this.meta().name.replace( / /g, '' ) in localStorage ) price.innerText = localStorage.getItem( this.meta().name )
+    if ( this.meta().name.replace( / /g, '' ) in localStorage ) price.innerText = +localStorage.getItem( this.meta().name.replace( / /g, '' ) )
     price.innerText = this.meta().startprice
 
     price.classList.add( 'price' )
