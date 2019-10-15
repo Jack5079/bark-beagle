@@ -23,4 +23,8 @@ class AutoClick extends clicker {
     }
   }
 }
+
+export AutoClick
 ```
+
+btw, auto.mjs would be a class that makes html with a title, button, and description (maybe even triggers onbuy when the button is pressed)
