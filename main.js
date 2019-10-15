@@ -49,7 +49,7 @@ class Upgrade {
     holder.appendChild( desc )
 
     let price = document.createElement( 'span' )
-    if ( this.meta().name in localStorage ) price.innerText = localStorage.getItem( this.meta().name )
+    if ( this.meta().name.replace( / /g, '' ) in localStorage ) price.innerText = localStorage.getItem( this.meta().name )
     price.innerText = this.meta().startprice
 
     price.classList.add( 'price' )
@@ -81,7 +81,7 @@ class BiggerBark extends Upgrade {
     strength++
     document.querySelector( '#strength' ).innerText = 'Bruh strength: ' + strength
     localStorage.setItem( 'beagleStr', strength )
-    localStorage.setItem( this.meta().name, costhtml.innerText )
+    localStorage.setItem( this.meta().name.replace( / /g, '' ), costhtml.innerText )
   }
 
   meta () {
