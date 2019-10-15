@@ -7,27 +7,22 @@ button {
 }
 
 #list {
+  width: max-content;
   padding: 1em;
   background: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 6em;
-  position: fixed;
   border-radius: 1em;
-  top: 3em;
-  left: 0.5em;
-  height: 1em;
   backdrop-filter: blur(0px);
-  transition: height 1s, backdrop-filter 0.5s, width 1s, top 1s, left 1s, border-radius 1s;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#list[open] {
-  border-radius: 0;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(50px);
+#list *:not(summary) {
+  transition: font-size 0.3s ease-out;
+  font-size: 0;
+}
+
+#list[open] *:not(summary) {
+  font-size: 1em;
 }
 
 .counter {
