@@ -54,21 +54,18 @@ They look like this:
 
 ## Your first upgrade
 
-First, we need to go to bottom of the `upgrades` array in `main.js`.
-Add a class to the array. This class should extend `Upgrade`.
+Right click the background, and press "Inspect". Click console. Now, lets define a new class.
+This class should extend `Upgrade`.
 
 ```js
-const upgrades = [
-  class Reload extends Upgrade {
+  new class Reload extends Upgrade {
   }
-]
 ```
 
 Now, we need some meta info.
 
 ```js
-const upgrades = [
-  class Reload extends Upgrade {
+  new class Reload extends Upgrade {
     meta () { // Info about this upgrade.
       return {
         name: 'Reload the page, please!',
@@ -77,7 +74,6 @@ const upgrades = [
       }
     }
   }
-]
 ```
 
 Now, this should add an upgrade to the list. However, nothing happens when you buy it!
