@@ -85,8 +85,7 @@ Now, this should add an upgrade to the list. However, nothing happens when you b
 We gotta add functionality.
 
 ```js
-const upgrades = [
-  class Reload extends Upgrade {
+  new class Reload extends Upgrade {
      meta () { // Info about this upgrade.
       return {
         name: 'Reload the page, please!',
@@ -100,10 +99,9 @@ const upgrades = [
       location.reload() // Reload the page.
     }
   }
-]
 ```
 
-Now, replace the upgrades code with this, and you now have your own upgrade!
+Now, run this in the console, and you now have your own upgrade!
 
 ### Other things you should try
 

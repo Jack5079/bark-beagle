@@ -62,35 +62,46 @@ class Upgrade {
 ${this.meta().desc }
 Costs ${this.price } bruhs`
   }
-}
 
-let upgrades = [ // A list of upgrades.
-  class BiggerBark extends Upgrade {
 
-    constructor () { // Runs on load.
-      super() // MUST PUT SUPER FOR UPGRADES TO WORK
-      this.strength = parseInt( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
-      document.getElementById( 'strength' ).innerText = this.strength // Display strength
-      document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } ) // Add the actual upgrade; this gives you the bigger bark.
-    }
-    onbuy ( price ) {
-      this.price *= 1.5
-      this.strength++
-      document.getElementById( 'strength' ).innerText = this.strength
-      localStorage.setItem( 'beagleStr', this.strength )
-    }
-
-    meta () {
-      return {
-        name: 'Bigger Bark',
-        desc: 'Increases your bruh strength ( bruhs on click ) by one.',
-        startprice: 30
-      }
+  // Now, for the fallbacks:
+  meta () {
+    return {
+      name: 'Error!',
+      desc: 'The creator of this upgrade forgot to fill in the meta info.',
+      startprice: 0
     }
   }
-]
 
-upgrades = upgrades.map( cl => new cl ) // Load all of the upgrades.
+  onbuy () {
+    alert( 'The creator of this upgrade forgot to make onbuy code.' )
+  }
+}
+
+
+new class BiggerBark extends Upgrade { // A bigger bark.
+
+  constructor () { // Runs on load.
+    super() // MUST PUT SUPER FOR UPGRADES TO WORK
+    this.strength = parseInt( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
+    document.getElementById( 'strength' ).innerText = this.strength // Display strength
+    document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } ) // Add the actual upgrade; this gives you the bigger bark.
+  }
+  onbuy ( price ) {
+    this.price *= 1.5
+    this.strength++
+    document.getElementById( 'strength' ).innerText = this.strength
+    localStorage.setItem( 'beagleStr', this.strength )
+  }
+
+  meta () {
+    return {
+      name: 'Bigger Bark',
+      desc: 'Increases your bruh strength ( bruhs on click ) by one.',
+      startprice: 30
+    }
+  }
+}
 
 
 document.getElementById( 'beagle' ).addEventListener( 'click', e => { // When the user clicks
