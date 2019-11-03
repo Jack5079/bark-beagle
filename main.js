@@ -85,7 +85,7 @@ new class BiggerBark extends Upgrade { // A bigger bark.
     document.getElementById('strength').innerText = this.strength // Display strength
     document.getElementById('beagle').addEventListener('click', () => { inc(this.strength - 1) }) // Add the actual upgrade; this gives you the bigger bark.
   }
-  
+
   onbuy (price) {
     this.price *= 1.5
     this.strength++
@@ -104,14 +104,13 @@ new class BiggerBark extends Upgrade { // A bigger bark.
 
 
 document.getElementById('beagle').addEventListener('click', e => { // When the user clicks
-
-  new Audio('sound.mp3').play()
-  inc(1)
-  clearTimeout(window.revert)
-  if ((Math.floor(Math.random() * 50) + 1) === 20) {
+  new Audio('sound.mp3').play() // play a bruh sound
+  inc(1) // add 1 to the bruh count
+  clearTimeout(window.revert) // remove the timeout if it's there
+  if ((Math.floor(Math.random() * 50) + 1) === 20) { // 1 in 50 chance
     document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
-  } else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture
-  window.revert = setTimeout(() => {
+  } else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture if it wasn't the bagel
+  window.revert = setTimeout(() => { // 1 second later
     document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
   }, 1000)
 })
