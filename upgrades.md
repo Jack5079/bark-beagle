@@ -2,7 +2,6 @@
 
 Upgrades are classes extending `Upgrade`
 
-
 ## Properties of an upgrade
 
 `this.price`: The current price of the upgrade. Can be changed.
