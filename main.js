@@ -18,32 +18,33 @@ inc(0) // Load the counter
 
 class Upgrade {
   constructor() {
-    this.html = document.createElement('div')
+    this.html = document.createElement('div') // the main div. where the upgrade is stored
 
-    let title = document.createElement('h2')
-    title.innerText = this.meta().name
-    this.html.appendChild(title)
+    let title = document.createElement('h2') // the title. this is where users will see the name
+    title.innerText = this.meta().name // add the title from meta
+    this.html.appendChild(title) // add it to the div
 
-    let desc = document.createElement('p')
-    desc.innerText = this.meta().desc
-    this.html.appendChild(desc)
+    let desc = document.createElement('p') // the description. this is where users will see what it does
+    desc.innerText = this.meta().desc // add the desc from meta
+    this.html.appendChild(desc) // add it to the div
 
-    let price = document.createElement('span')
-    price.innerText = this.meta().startprice
+    let price = document.createElement('span') // the price span. this is very important; changing this will change the actual price.
+    price.innerText = this.meta().startprice // add the price
 
-    price.classList.add('price')
-    this.html.appendChild(price)
+    price.classList.add('price') // add a class to it so it puts 'Costs ' before it and ' bruhs' after it
+    this.html.appendChild(price) // add it to the div
 
-    let button = document.createElement('button')
-    button.innerText = 'Buy'
-    button.addEventListener('click', () => {
-      if (beagleCount >= this.price) {
-        inc(-this.price)
-        this.onbuy()
+    let button = document.createElement('button') // the button. this is where they actually buy it
+    button.innerText = 'Buy' // make it say "buy"
+    button.addEventListener('click', () => { // when the user clicks it
+      if (beagleCount >= this.price) { // if they can buy it
+        inc(-this.price) // remove the price from the bruh count
+        this.onbuy() // activate onbuy
       }
     })
-    this.html.appendChild(button)
-    document.querySelector('details').appendChild(this.html)
+    this.html.appendChild(button) // add the button to the div
+    
+    document.querySelector('details').appendChild(this.html) // add the upgrade to the list
   }
 
   get price () {
