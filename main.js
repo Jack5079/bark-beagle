@@ -81,12 +81,12 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
 
   constructor() { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
-    let strengthtml = document.createElement('span') // the html
-    strengthtml.id = 'strength'
-    strengthtml.innerText =  +localStorage.getItem('beagleStr') || 1
-    strengthtml.classList.add('counter')
-    document.body.appendChild(strengthtml)
-    this.strength = +localStorage.getItem('beagleStr') || 1 // Load strength
+    let strengthtml = document.createElement('span') // the html counter
+    strengthtml.id = 'strength' // add the id
+    strengthtml.innerText =  +localStorage.getItem('beagleStr') || 1 // load the strength
+    strengthtml.classList.add('counter') // add counter class
+    document.body.appendChild(strengthtml) // add to body
+    
     document.getElementById('beagle').addEventListener('click', () => { // Add the actual upgrade; this gives you the bigger bark.
       inc(this.strength - 1) // add strength - 1 to the bruh count (- 1 is so we can account for the builtin onclick)
     }) 
