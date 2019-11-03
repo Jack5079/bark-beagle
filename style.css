@@ -9,6 +9,8 @@ button {
 #list {
   width: max-content;
   padding: 1em;
+  margin: 1em;
+  margin-left: 0.1em;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 1em;
@@ -29,6 +31,7 @@ button {
   font-family: monospace;
   font-size: 2em;
   padding: 0.1em;
+  margin: 0.1em;
   color: white;
   border-radius: 0.5em;
   background: rgba(0, 0, 0, 0.5);
