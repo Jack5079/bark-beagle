@@ -43,16 +43,16 @@ class Upgrade {
       }
     })
     this.html.appendChild(button) // add the button to the div
-    
+
     document.querySelector('details').appendChild(this.html) // add the upgrade to the list
   }
 
-  get price () {
-    return +this.html.querySelector('span').innerText
+  get price () { // this is where upgrades can see the price
+    return +this.html.querySelector('span').innerText // return the price innerText
   }
 
-  set price (amount) {
-    this.html.querySelector('span').innerText = +amount
+  set price (amount) { // this is how upgrades change the price
+    this.html.querySelector('span').innerText = +amount // change the innerText to a number
   }
 
   toString () { // stuff like ''+upgrade
@@ -63,7 +63,7 @@ Costs ${this.price} bruhs`
 
 
   // Now, for the fallbacks:
-  meta () {
+  meta () { // when the upgrade doesn't provide meta()
     return {
       name: 'Error!',
       desc: 'The creator of this upgrade forgot to fill in the meta info.',
@@ -71,7 +71,7 @@ Costs ${this.price} bruhs`
     }
   }
 
-  onbuy () {
+  onbuy () { // when the upgrade doesn't provide onbuy()
     alert('The creator of this upgrade forgot to make onbuy code.')
   }
 }
@@ -85,6 +85,7 @@ new class BiggerBark extends Upgrade { // A bigger bark.
     document.getElementById('strength').innerText = this.strength // Display strength
     document.getElementById('beagle').addEventListener('click', () => { inc(this.strength - 1) }) // Add the actual upgrade; this gives you the bigger bark.
   }
+  
   onbuy (price) {
     this.price *= 1.5
     this.strength++
