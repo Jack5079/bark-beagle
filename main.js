@@ -1,5 +1,5 @@
 /* global localStorage, Audio */
-let beagleCount = ( +localStorage.getItem( 'beagleSave' ) ) || 0 // Load the beagle count
+let beagleCount = (+localStorage.getItem('beagleSave')) || 0 // Load the beagle count
 
 /**
  * Increases the bruh counter.
@@ -7,60 +7,60 @@ let beagleCount = ( +localStorage.getItem( 'beagleSave' ) ) || 0 // Load the bea
  *
  * @param Number amount
  */
-function inc ( amount ) {
+function inc (amount) {
   beagleCount += amount // Add to the beagle count
-  localStorage.setItem( 'beagleSave', beagleCount ) // Save the counter
-  document.getElementById( 'counter' ).innerText = beagleCount // Show that count to the user
+  localStorage.setItem('beagleSave', beagleCount) // Save the counter
+  document.getElementById('counter').innerText = beagleCount // Show that count to the user
 }
 
 
-inc( 0 ) // Load the counter
+inc(0) // Load the counter
 
 class Upgrade {
-  constructor () {
-    this.html = document.createElement( 'div' )
+  constructor() {
+    this.html = document.createElement('div')
 
-    let title = document.createElement( 'h2' )
+    let title = document.createElement('h2')
     title.innerText = this.meta().name
-    this.html.appendChild( title )
+    this.html.appendChild(title)
 
-    let desc = document.createElement( 'p' )
+    let desc = document.createElement('p')
     desc.innerText = this.meta().desc
-    this.html.appendChild( desc )
+    this.html.appendChild(desc)
 
-    let price = document.createElement( 'span' )
-    if ( this.meta().name.replace( / /g, '' ) in localStorage ) price.innerText = +localStorage.getItem( this.meta().name.replace( / /g, '' ) )
+    let price = document.createElement('span')
+    if (this.meta().name.replace(/ /g, '') in localStorage) price.innerText = +localStorage.getItem(this.meta().name.replace(/ /g, ''))
     price.innerText = this.meta().startprice
 
-    price.classList.add( 'price' )
-    this.html.appendChild( price )
+    price.classList.add('price')
+    this.html.appendChild(price)
 
-    let button = document.createElement( 'button' )
+    let button = document.createElement('button')
     button.innerText = 'Buy'
-    button.addEventListener( 'click', () => {
-      if ( beagleCount >= price.innerText ) {
-        inc( -parseInt( price.innerText ) )
+    button.addEventListener('click', () => {
+      if (beagleCount >= price.innerText) {
+        inc(-parseInt(price.innerText))
         this.onbuy()
 
       }
-    } )
-    this.html.appendChild( button )
-    document.querySelector( 'details' ).appendChild( this.html )
+    })
+    this.html.appendChild(button)
+    document.querySelector('details').appendChild(this.html)
     this.html = this.html
   }
 
   get price () {
-    return +this.html.querySelector( 'span' ).innerText
+    return +this.html.querySelector('span').innerText
   }
 
-  set price ( amount ) {
-    this.html.querySelector( 'span' ).innerText = +amount
+  set price (amount) {
+    this.html.querySelector('span').innerText = +amount
   }
 
   toString () { // stuff like ''+upgrade
-    return `${ this.meta().name }
-${this.meta().desc }
-Costs ${this.price } bruhs`
+    return `${this.meta().name}
+${this.meta().desc}
+Costs ${this.price} bruhs`
   }
 
 
@@ -74,24 +74,24 @@ Costs ${this.price } bruhs`
   }
 
   onbuy () {
-    alert( 'The creator of this upgrade forgot to make onbuy code.' )
+    alert('The creator of this upgrade forgot to make onbuy code.')
   }
 }
 
 
 new class BiggerBark extends Upgrade { // A bigger bark.
 
-  constructor () { // Runs on load.
+  constructor() { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
-    this.strength = parseInt( localStorage.getItem( 'beagleStr' ) ) || 1 // Load strength
-    document.getElementById( 'strength' ).innerText = this.strength // Display strength
-    document.getElementById( 'beagle' ).addEventListener( 'click', () => { inc( this.strength - 1 ) } ) // Add the actual upgrade; this gives you the bigger bark.
+    this.strength = parseInt(localStorage.getItem('beagleStr')) || 1 // Load strength
+    document.getElementById('strength').innerText = this.strength // Display strength
+    document.getElementById('beagle').addEventListener('click', () => { inc(this.strength - 1) }) // Add the actual upgrade; this gives you the bigger bark.
   }
-  onbuy ( price ) {
+  onbuy (price) {
     this.price *= 1.5
     this.strength++
-    document.getElementById( 'strength' ).innerText = this.strength
-    localStorage.setItem( 'beagleStr', this.strength )
+    document.getElementById('strength').innerText = this.strength
+    localStorage.setItem('beagleStr', this.strength)
   }
 
   meta () {
@@ -104,15 +104,15 @@ new class BiggerBark extends Upgrade { // A bigger bark.
 }
 
 
-document.getElementById( 'beagle' ).addEventListener( 'click', e => { // When the user clicks
+document.getElementById('beagle').addEventListener('click', e => { // When the user clicks
 
-  new Audio( 'sound.mp3' ).play()
-  inc( 1 )
-  clearTimeout( window.revert )
-  if ( ( Math.floor( Math.random() * 50 ) + 1 ) === 20 ) {
-    document.getElementById( 'beagle' ).src = './bagel.jpg' // Switch to the bagel picture
-  } else document.getElementById( 'beagle' ).src = './bark.png' // Switch to the barking picture
-  window.revert = setTimeout( () => {
-    document.getElementById( 'beagle' ).src = './beg.png' // Switch to the begging picture (the default)
-  }, 1000 )
-} )
+  new Audio('sound.mp3').play()
+  inc(1)
+  clearTimeout(window.revert)
+  if ((Math.floor(Math.random() * 50) + 1) === 20) {
+    document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
+  } else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture
+  window.revert = setTimeout(() => {
+    document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
+  }, 1000)
+})
