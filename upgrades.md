@@ -2,7 +2,8 @@
 
 Upgrades are classes extending `Upgrade`
 
-## Stuff you can get in an upgrade
+
+## Properties of an upgrade
 
 `this.price`: The current price of the upgrade. Can be changed.
 
@@ -21,18 +22,16 @@ The `meta` method returns a object, which stores data like:
 They look something like this:
 
 ```js
- meta () {
+meta () {
       return {
         name: 'Reload the page, please!',
         desc: 'This will reload the page.',
         startprice: 10
       }
- }
-```
+}
+  ```
 
-## You probably want these
-
-1. `onbuy` method
+2. `onbuy` method
 
 `onbuy` is called whenever the upgrade is bought.
 
@@ -54,7 +53,7 @@ They look like this:
 
 ## Your first upgrade
 
-Right click the background, and press "Inspect". Click console. Now, lets define a new class.
+Right click the background, and press "Inspect". Click console. Now, let's define a new class.
 This class should extend `Upgrade`.
 
 ```js
