@@ -82,7 +82,9 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
   constructor() { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
     this.strength = +localStorage.getItem('beagleStr') || 1 // Load strength
-    document.getElementById('beagle').addEventListener('click', () => { inc(this.strength - 1) }) // Add the actual upgrade; this gives you the bigger bark.
+    document.getElementById('beagle').addEventListener('click', () => { // Add the actual upgrade; this gives you the bigger bark.
+      inc(this.strength - 1) // add strength - 1 to the bruh count (- 1 is so we can account for the builtin onclick)
+    }) 
   }
 
   onbuy (price) { // when they buy it
@@ -90,7 +92,7 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
     this.strength++ // add to the strength
   }
 
-  meta () {
+  meta () { // info about bigger bark
     return {
       name: 'Bigger Bark',
       desc: 'Increases your bruh strength ( bruhs on click ) by one.',
