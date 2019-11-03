@@ -77,7 +77,7 @@ Costs ${this.price} bruhs`
 }
 
 
-new class BiggerBark extends Upgrade { // A bigger bark.
+let BiggerBark = new class extends Upgrade { // A bigger bark.
 
   constructor() { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
