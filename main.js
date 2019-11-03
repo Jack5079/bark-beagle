@@ -37,15 +37,13 @@ class Upgrade {
     let button = document.createElement('button')
     button.innerText = 'Buy'
     button.addEventListener('click', () => {
-      if (beagleCount >= price.innerText) {
-        inc(-parseInt(price.innerText))
+      if (beagleCount >= this.price) {
+        inc(-this.price)
         this.onbuy()
-
       }
     })
     this.html.appendChild(button)
     document.querySelector('details').appendChild(this.html)
-    this.html = this.html
   }
 
   get price () {
