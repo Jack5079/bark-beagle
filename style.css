@@ -9,13 +9,13 @@ button {
 #list {
   width: max-content;
   padding: 1em;
-  margin: 1em;
-  margin-left: 0.1em;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 1em;
   backdrop-filter: blur(0px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  bottom: 0;
 }
 
 #list *:not(summary) {
