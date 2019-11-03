@@ -15,7 +15,7 @@ button {
   backdrop-filter: blur(0px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
-  bottom: 0;
+  bottom: 0.3em;
 }
 
 #list *:not(summary) {
