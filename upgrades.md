@@ -1,3 +1,4 @@
+*Go to [Bruh Beagle Upgrade Maker](https://jack5079.github.io/bruh-beagle-upgrade-maker) if you don't want to learn all of this*
 # How to make upgrades for Bruh Beagle 2
 
 Upgrades are classes extending `Upgrade`
