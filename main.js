@@ -116,6 +116,19 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
   }
 }
 
+new class extends Upgrade { // All upgrades extend Upgrade.
+    meta () { // Info about your upgrade.
+      return {
+    "name": "make bruh beagle fat",
+    "desc": "working 2012",
+    "startprice": 10
+}
+    }
+    onbuy () { // When your upgrade is bought
+      let beagle = document.getElementById('beagle')
+beagle.style.transform = 'scaleX(4)'
+    }
+  }
 
 document.getElementById('beagle').addEventListener('click', e => { // When the user clicks
   new Audio('sound.mp3').play() // play a bruh sound
