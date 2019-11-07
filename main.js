@@ -120,7 +120,7 @@ new class extends Upgrade { // All upgrades extend Upgrade.
     meta () { // Info about your upgrade.
       return {
     "name": "make bruh beagle fat",
-    "desc": "working 2012",
+    "desc": "working 2013",
     "startprice": 10
 }
     }
