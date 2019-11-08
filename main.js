@@ -55,6 +55,14 @@ class Upgrade {
     this.html.querySelector('span').innerText = +amount // change the innerText to a number
   }
 
+  show () { // shows it
+    this.html.style.display = 'unset'
+  }
+
+  hide () { // hides the upgrade
+    this.html.style.display = 'none'
+  }
+
   toString () { // stuff like ''+upgrade
     return `${this.meta().name}
 ${this.meta().desc}
@@ -160,6 +168,20 @@ let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
     localStorage.setItem('width', +amount)
 
     document.getElementById('width').innerText = +amount
+  }
+}
+
+let vegan = new class extends Upgrade { // All upgrades extend Upgrade.
+  meta () { // Info about your upgrade.
+    return {
+      "name": "go on a vegan diet",
+      "desc": "how to make bruh beagle not fat (working 2011)",
+      "startprice": 10
+    }
+  }
+  onbuy () { // When your upgrade is bought
+    fatBeagle.width = 1
+    this.price *= 1.1
   }
 }
 
