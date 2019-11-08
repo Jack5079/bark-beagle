@@ -83,13 +83,13 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
     let strengthtml = document.createElement('span') // the html counter
     strengthtml.id = 'strength' // add the id
-    strengthtml.innerText =  +localStorage.getItem('beagleStr') || 1 // load the strength
+    strengthtml.innerText = localStorage.getItem('beagleStr') || 1 // load the strength
     strengthtml.classList.add('counter') // add counter class
     document.body.appendChild(strengthtml) // add to body
-    
+
     document.getElementById('beagle').addEventListener('click', () => { // Add the actual upgrade; this gives you the bigger bark.
       inc(this.strength - 1) // add strength - 1 to the bruh count (- 1 is so we can account for the builtin onclick)
-    }) 
+    })
   }
 
   onbuy (price) { // when they buy it
@@ -111,24 +111,54 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
   }
 
   set strength (amount) {
-     document.getElementById('strength').innerText = +amount // set the innertext
-     localStorage.setItem('beagleStr', +amount) // save it
+    document.getElementById('strength').innerText = +amount // set the innertext
+    localStorage.setItem('beagleStr', +amount) // save it
   }
 }
 
-new class extends Upgrade { // All upgrades extend Upgrade.
-    meta () { // Info about your upgrade.
-      return {
-    "name": "make bruh beagle fat",
-    "desc": "working 2013",
-    "startprice": 10
-}
-    }
-    onbuy () { // When your upgrade is bought
-      let beagle = document.getElementById('beagle')
-beagle.style.transform = 'scaleX(4)'
+let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
+  meta () { // Info about your upgrade.
+    return {
+      "name": "make bruh beagle fat",
+      "desc": "working 2013",
+      "startprice": 10
     }
   }
+
+  constructor() { // when upgrade is added to game
+    super()
+    let strengthtml = document.createElement('span') // the html counter
+    strengthtml.id = 'width' // add the id
+    document.body.appendChild(strengthtml) // add to body
+
+    this.width = localStorage.getItem('width') || 1
+    strengthtml.innerText = this.width // load the strength
+    strengthtml.classList.add('counter') // add counter class
+  }
+
+  onbuy () { // When your upgrade is bought
+    this.width *= 1.5
+  }
+
+  get width () {
+    let beagle = document.getElementById('beagle')
+
+    let style = beagle.style.transform || 'scaleX(1)'
+    return +style
+      .replace('scaleX(', '')
+      .replace(')', '')
+  }
+
+  set width (amount) {
+    let beagle = document.getElementById('beagle')
+
+    beagle.style.transform = `scaleX(${+amount})`
+
+    localStorage.setItem('width', +amount)
+
+    document.getElementById('width').innerText = +amount
+  }
+}
 
 document.getElementById('beagle').addEventListener('click', e => { // When the user clicks
   new Audio('sound.mp3').play() // play a bruh sound
