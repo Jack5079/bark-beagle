@@ -1,8 +1,8 @@
 /* global localStorage, Audio */
 
-import inc from './lib/inc.mjs'
+import load from './lib/inc.mjs'
 
-inc((+localStorage.getItem('beagleSave')) || 0) // Load the counter
+load((+localStorage.getItem('beagleSave')) || 0) // Load the counter
 
 // Import the upgrades
 import './upgrades/width.mjs'
@@ -12,7 +12,7 @@ import './upgrades/strength.mjs'
 // onclick
 document.getElementById('beagle').addEventListener('click', e => { // When the user clicks
   new Audio('sound.mp3').play() // play a bruh sound
-  inc(1) // add 1 to the bruh count
+  load(1) // add 1 to the bruh count
   clearTimeout(window.revert) // remove the timeout if it's there
   if ((Math.floor(Math.random() * 50) + 1) === 20) { // 1 in 50 chance
     document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
