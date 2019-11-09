@@ -5,8 +5,8 @@ import load from './lib/inc.mjs'
 load((+localStorage.getItem('beagleSave')) || 0) // Load the counter
 
 // Import the upgrades
-import './upgrades/width.mjs'
-import './upgrades/strength.mjs'
+import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
+import './upgrades/strength.mjs' // bigger bark
 
 
 // onclick
