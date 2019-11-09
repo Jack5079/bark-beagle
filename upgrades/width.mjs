@@ -15,18 +15,17 @@ let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
     strengthtml.id = 'width' // add the id
     document.body.appendChild(strengthtml) // add to body
 
-    this.width = localStorage.getItem('width') || 1
+    this.width = localStorage.getItem('width') || 1 // load the width
     strengthtml.innerText = this.width // load the strength
     strengthtml.classList.add('counter') // add counter class
     if (this.width >= 24879600) this.hide()
   }
 
   onbuy () { // When your upgrade is bought
-    this.width *= 1.5
+    this.width *= 1.5 // make the beagle fat
+    this.price *= 1.1 // increase the price
 
-    this.price *= 1.1
-
-    if (this.width >= 24879600) this.hide()
+    if (this.width >= 24879600) this.hide() // if the beagle is gone then hide the upgrade
   }
 
   get width () {
@@ -58,9 +57,9 @@ let vegan = new class extends Upgrade { // All upgrades extend Upgrade.
     }
   }
   onbuy () { // When your upgrade is bought
-    fatBeagle.width = 1
-    fatBeagle.show()
-    this.price *= 1.1
+    fatBeagle.width = 1 // reset width
+    fatBeagle.show() // show the upgrade
+    this.price *= 1.1 // increase price
   }
 }
 
