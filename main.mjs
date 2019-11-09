@@ -5,8 +5,8 @@ import inc from './inc.mjs'
 inc((+localStorage.getItem('beagleSave')) || 0) // Load the counter
 
 // Import the upgrades
-import './width.mjs'
-import './strength.mjs'
+import './upgrades/width.mjs'
+import './upgrades/strength.mjs'
 
 
 // onclick

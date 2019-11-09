@@ -1,4 +1,4 @@
-import Upgrade from './upgrade.mjs'
+import Upgrade from '../upgrade.mjs'
 
 let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
   meta () { // Info about your upgrade.
