@@ -26,6 +26,8 @@ let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
 
     this.price *= 1.1
     this.price = Math.round(this.price)
+
+    if (this.width >= 24879600) this.hide()
   }
 
   get width () {
