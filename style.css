@@ -51,7 +51,10 @@ button:active {
 }
 
 #list div {
+  float: left;
+  padding: 1em;
   font-size: 1em;
+  width: max-content;
 }
 
 .counter {
