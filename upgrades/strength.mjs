@@ -1,4 +1,4 @@
-import Upgrade from '../upgrade.mjs'
+import Upgrade from '../lib/upgrade.mjs'
 let BiggerBark = new class extends Upgrade { // A bigger bark.
 
   constructor() { // Runs on load.

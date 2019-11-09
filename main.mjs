@@ -1,6 +1,6 @@
 /* global localStorage, Audio */
 
-import inc from './inc.mjs'
+import inc from './lib/inc.mjs'
 
 inc((+localStorage.getItem('beagleSave')) || 0) // Load the counter
 
