@@ -41,6 +41,7 @@ button:active {
   margin: 0;
   padding: 0;
   padding-left: 1em;
+  padding-right: 1em;
   overflow: scroll;
   overflow-x: hidden;
 }
