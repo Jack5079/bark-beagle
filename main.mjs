@@ -9,8 +9,12 @@ import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
 import './upgrades/strength.mjs' // bigger bark
 import './upgrades/autobruh.mjs' // auto bruh
 
+// Import the achivements
+import './achivements/firstBruh.mjs'
+
+
 // onclick
-document.getElementById('beagle').addEventListener('click', e => { // When the user clicks
+document.getElementById('beagle').addEventListener('click', () => { // When the user clicks
   new Audio('sound.mp3').play() // play a bruh sound
   load(1) // add 1 to the bruh count
   clearTimeout(window.revert) // remove the timeout if it's there
