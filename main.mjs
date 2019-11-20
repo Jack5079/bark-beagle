@@ -11,7 +11,7 @@ import './upgrades/autobruh.mjs' // auto bruh
 
 // Import the achivements
 import './achivements/firstBruh.mjs'
-
+import './achivements/bagel.mjs'
 
 // onclick
 document.getElementById('beagle').addEventListener('click', () => { // When the user clicks
