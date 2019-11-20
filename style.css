@@ -17,6 +17,11 @@ button:active {
   outline: none;
 }
 
+#expandables {
+  bottom: 0.3em;
+  position: absolute;
+}
+
 details {
   padding: 1em;
   background: rgba(0, 0, 0, 0.5);
@@ -24,8 +29,7 @@ details {
   border-radius: 1em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 1em;
-  bottom: 0.3em;
-  position: absolute;
+  z-index: 10;
   width: 10em;
   backdrop-filter: blur(50px);
   transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
