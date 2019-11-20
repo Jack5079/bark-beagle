@@ -17,12 +17,11 @@ button:active {
   outline: none;
 }
 
-#list {
+details {
   padding: 1em;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 1em;
-  backdrop-filter: blur(0px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 1em;
   bottom: 0.3em;
@@ -32,7 +31,7 @@ button:active {
   transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#list[open] {
+details[open] {
   height: 100%;
   width: 100%;
   border-radius: 0;
@@ -47,11 +46,11 @@ button:active {
   overflow-x: hidden;
 }
 
-#list[open] summary {
+details[open] summary {
   padding-right: 1em;
 }
 
-#list div {
+details div {
   float: left;
   padding: 1em;
   font-size: 1em;
@@ -93,7 +92,7 @@ button:active {
   z-index: -100;
 }
 
-#list summary a {
+details summary a {
   float: right;
   border-radius: 1em;
   text-decoration: none;
