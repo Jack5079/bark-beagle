@@ -69,6 +69,7 @@ details div {
   color: white;
   border-radius: 0.5em;
   background: rgba(0, 0, 0, 0.5);
+  display: inline-block
 }
 
 .price:after {
