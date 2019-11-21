@@ -16,7 +16,7 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
     })
   }
 
-  onbuy (price) { // when they buy it
+  onbuy () { // when they buy it
     this.price *= 1.5 // almost double the price
     this.strength++ // add to the strength
   }
