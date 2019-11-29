@@ -100,9 +100,3 @@ We gotta add functionality.
 
 Now, run this in the console, and you now have your own upgrade!
 
-### Other things you should try
-
-Try making an autoclicker!
-The global `inc` function increases the bruh count. Try using it on an setInterval.
-
-<sup>please send a pull request if you do this, and make it save across sessions (btw `constructor` is pretty useful for loading saves inside an upgrade)</sup>
