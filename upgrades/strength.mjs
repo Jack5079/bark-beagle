@@ -16,6 +16,17 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
     })
   }
 
+  
+
+  get strength () {
+    return +document.getElementById('strength').innerText // return the bruh strength innertext
+  }
+
+  set strength (amount) {
+    document.getElementById('strength').innerText = +amount // set the innertext
+    localStorage.setItem('beagleStr', +amount) // save it
+  }
+  
   onbuy () { // when they buy it
     this.price *= 1.5 // almost double the price
     this.strength++ // add to the strength
@@ -27,16 +38,6 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
       desc: 'Increases your bruh strength ( bruhs on click ) by one.',
       startprice: 30
     }
-  }
-
-
-  get strength () {
-    return +document.getElementById('strength').innerText // return the bruh strength innertext
-  }
-
-  set strength (amount) {
-    document.getElementById('strength').innerText = +amount // set the innertext
-    localStorage.setItem('beagleStr', +amount) // save it
   }
 }
 
