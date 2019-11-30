@@ -18,11 +18,9 @@ document.getElementById('beagle').addEventListener('click', () => { // When the 
   if ('aud' in window) aud.pause()
   window.aud = new Audio('sound.mp3') // play a bruh sound
   aud.play()
-  aud.onended = () => { // When the audio ends
-     document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
-  }
+  aud.onended = () =>  document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
   load(1) // add 1 to the bruh count
-  if ((Math.floor(Math.random() * 500) + 1) === 20) { // 1 in 50 chance
+  if ((Math.floor(Math.random() * 500) + 1) === 20) // 1 in 50 chance
     document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
-  } else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture if it wasn't the bagel
+  else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture if it wasn't the bagel
 })
