@@ -20,8 +20,8 @@ document.getElementById('beagle').addEventListener('click', () => { // When the 
   aud.play()
   aud.onplay = () => {
     if ((Math.floor(Math.random() * 500) + 1) === 20) // 1 in 50 chance
-     document.getElementById('beagle').src = './bagel.jpg' // Switch to the bagel picture
-    else document.getElementById('beagle').src = './bark.png' // Switch to the barking picture if it wasn't the bagel
+     document.getElementById('beagle').src = './assets/bagel.jpg' // Switch to the bagel picture
+    else document.getElementById('beagle').src = './assets/bark.png' // Switch to the barking picture if it wasn't the bagel
   }
   aud.onended = () =>  document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
   load(1) // add 1 to the bruh count
