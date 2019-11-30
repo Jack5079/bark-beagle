@@ -23,6 +23,6 @@ document.getElementById('beagle').addEventListener('click', () => { // When the 
      document.getElementById('beagle').src = './assets/bagel.jpg' // Switch to the bagel picture
     else document.getElementById('beagle').src = './assets/bark.png' // Switch to the barking picture if it wasn't the bagel
   }
-  aud.onended = () =>  document.getElementById('beagle').src = './beg.png' // Switch to the begging picture (the default)
+  aud.onended = () =>  document.getElementById('beagle').src = './assets/beg.png' // Switch to the begging picture (the default)
   load(1) // add 1 to the bruh count
 })
