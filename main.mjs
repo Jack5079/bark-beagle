@@ -16,7 +16,7 @@ import './achivements/bagel.mjs'
 // onclick
 document.getElementById('beagle').addEventListener('click', () => { // When the user clicks
   if ('aud' in window) aud.pause()
-  window.aud = new Audio('sound.mp3') // play a bruh sound
+  window.aud = new Audio('./assets/sound.mp3') // play a bruh sound
   aud.play()
   aud.onplay = () => {
     if ((Math.floor(Math.random() * 500) + 1) === 20) // 1 in 50 chance
