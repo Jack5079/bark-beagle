@@ -8,6 +8,7 @@ load((+localStorage.getItem('beagleSave')) || 0) // Load the counter
 import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
 import './upgrades/strength.mjs' // bigger bark
 import './upgrades/autobruh.mjs' // auto bruh
+import './upgrades/ending.mjs'
 
 // Import the achivements
 import './achivements/firstBruh.mjs'
