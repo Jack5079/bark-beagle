@@ -23,6 +23,11 @@
         }
       }
     </script>
+    
+
+    <!-- Preload images -->
+    <link href="./assets/bark.png" rel="preload" as="image">
+    <link href="./assets/bagel.jpg" rel="preload" as="image" >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -43,7 +48,7 @@
 
   <body>
     <!-- The actual beagle picture. Every time the user clicks, it calls the function inc. It is fixed in the center, behind everything else. It resizes to fit the screen.  -->
-    <img id="beagle" src="./assets/beg.png" alt="A very cute beagle.">
+    <img id="beagle" src="./assets/beg.png" alt="Aww!!! A cute beagle!"></img>
     <span id="counter" class="counter">0</span>
     <div id="expandables">
       <details id="list">
@@ -56,10 +61,6 @@
         <summary>Achivements</summary>
       </details>
     </div>
-
-    <!-- Preload images -->
-    <img src="./assets/bark.png" width="0" height="0" style="display: none;">
-    <img src="./assets/bagel.jpg" width="0" height="0" style="display: none;">
     <!-- Link to the code -->
     <script src="./main.mjs" type="module" defer></script>
   </body>
