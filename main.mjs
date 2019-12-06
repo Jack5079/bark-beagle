@@ -18,8 +18,8 @@ import './achivements/bagel.mjs'
 document.getElementById('beagle').addEventListener('click', () => { // When the user clicks
   if ('aud' in window) aud.pause()
   window.aud = new Audio('./assets/sound.mp3') // play a bruh sound
-  aud.play()
-  aud.onplay = () => {
+  aud.play() // Play the sound
+  aud.onplay = () => { // When it starts
     if ((Math.floor(Math.random() * 500) + 1) === 20) // 1 in 50 chance
      document.getElementById('beagle').src = './assets/bagel.jpg' // Switch to the bagel picture
     else document.getElementById('beagle').src = './assets/bark.png' // Switch to the barking picture if it wasn't the bagel
