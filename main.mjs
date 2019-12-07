@@ -18,7 +18,7 @@ import './achivements/bagel.mjs'
 let audio  = new Audio('./assets/sound.mp3') // play a bruh sound
 // onclick
 document.getElementById('beagle').addEventListener('click', () => { // When the user clicks
-  audio.currentTime = 0
+  audio.currentTime = 0 // Go back to the start
   audio.play() // Play the sound
   audio.onplay = () => { // When it starts
     if ((Math.floor(Math.random() * 500) + 1) === 20) // 1 in 50 chance
