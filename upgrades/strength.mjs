@@ -1,11 +1,11 @@
+/* global localStorage */
 import Upgrade from '../lib/upgrade.mjs'
 import inc from '../lib/inc.mjs'
 
-let BiggerBark = new class extends Upgrade { // A bigger bark.
-
-  constructor() { // Runs on load.
+const BiggerBark = new class extends Upgrade { // A bigger bark.
+  constructor () { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
-    let strengthtml = document.createElement('span') // the html counter
+    const strengthtml = document.createElement('span') // the html counter
     strengthtml.id = 'strength' // add the id
     strengthtml.innerText = localStorage.getItem('beagleStr') || 1 // load the strength
     strengthtml.classList.add('counter') // add counter class
@@ -16,8 +16,6 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
     })
   }
 
-  
-
   get strength () {
     return +document.getElementById('strength').innerText // return the bruh strength innertext
   }
@@ -26,7 +24,7 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
     document.getElementById('strength').innerText = +amount // set the innertext
     localStorage.setItem('beagleStr', +amount) // save it
   }
-  
+
   onbuy () { // when they buy it
     this.price *= 1.5 // almost double the price
     this.strength++ // add to the strength
@@ -39,6 +37,6 @@ let BiggerBark = new class extends Upgrade { // A bigger bark.
       startprice: 30
     }
   }
-}
+}()
 
 export default BiggerBark

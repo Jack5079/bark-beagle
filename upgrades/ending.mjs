@@ -1,7 +1,7 @@
 import Upgrade from '../lib/upgrade.mjs'
 
 class Ending extends Upgrade {
-  meta() {
+  meta () {
     return {
       name: 'See the credits',
       desc: 'You win!',
@@ -9,8 +9,8 @@ class Ending extends Upgrade {
     }
   }
 
-  onbuy() {
-    let credits = document.createElement('div')
+  onbuy () {
+    const credits = document.createElement('div')
     credits.style.background = 'black'
     credits.style.color = 'white'
     credits.style.position = 'fixed'
@@ -18,13 +18,13 @@ class Ending extends Upgrade {
     credits.innerText = 'made by jack5079 - haha beagle funny'
 
     credits.style.padding = '1em'
-    let exit = document.createElement('button')
+    const exit = document.createElement('button')
     exit.innerText = 'Close'
     exit.style.float = 'right'
-    exit.addEventListener('click', _=>credits.remove())
+    exit.addEventListener('click', _ => credits.remove())
     credits.appendChild(exit)
     document.body.appendChild(credits)
   }
 }
 
-export default new Ending
+export default new Ending()

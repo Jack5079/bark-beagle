@@ -1,10 +1,10 @@
 import Achivement from '../lib/achivement.mjs'
 import getBruh from '../lib/inc.mjs'
 
-let firstBruh = new Achivement('First bruh', 'Click the beagle for the first time')
+const firstBruh = new Achivement('First bruh', 'Click the beagle for the first time')
 
 document.getElementById('beagle').addEventListener('click', () => {
-  if (getBruh(0) == 0) {
+  if (getBruh(0) === 0) {
     firstBruh.progress = 100
   }
 })

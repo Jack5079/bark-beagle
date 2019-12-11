@@ -1,17 +1,18 @@
+/* global localStorage */
 import Upgrade from '../lib/upgrade.mjs'
 
-let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
+const fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
   meta () { // Info about your upgrade.
     return {
-      "name": "make bruh beagle fat",
-      "desc": "working 2013",
-      "startprice": 10
+      name: 'make bruh beagle fat',
+      desc: 'working 2013',
+      startprice: 10
     }
   }
 
-  constructor() { // when upgrade is added to game
+  constructor () { // when upgrade is added to game
     super()
-    let strengthtml = document.createElement('span') // the html counter
+    const strengthtml = document.createElement('span') // the html counter
     strengthtml.id = 'width' // add the id
     document.body.appendChild(strengthtml) // add to body
 
@@ -29,16 +30,16 @@ let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
   }
 
   get width () {
-    let beagle = document.getElementById('beagle')
+    const beagle = document.getElementById('beagle')
 
-    let style = beagle.style.transform || 'scaleX(1)'
+    const style = beagle.style.transform || 'scaleX(1)'
     return +style
       .replace('scaleX(', '')
       .replace(')', '')
   }
 
   set width (amount) {
-    let beagle = document.getElementById('beagle')
+    const beagle = document.getElementById('beagle')
 
     beagle.style.transform = `scaleX(${+amount})`
 
@@ -46,21 +47,22 @@ let fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
 
     document.getElementById('width').innerText = +amount
   }
-}
+}()
 
-let vegan = new class extends Upgrade { // All upgrades extend Upgrade.
+const vegan = new class extends Upgrade { // All upgrades extend Upgrade.
   meta () { // Info about your upgrade.
     return {
-      "name": "go on a vegan diet",
-      "desc": "how to make bruh beagle not fat (working 2011)",
-      "startprice": 10
+      name: 'go on a vegan diet',
+      desc: 'how to make bruh beagle not fat (working 2011)',
+      startprice: 10
     }
   }
+
   onbuy () { // When your upgrade is bought
     fatBeagle.width = 1 // reset width
     fatBeagle.show() // show the upgrade
     this.price *= 1.1 // increase price
   }
-}
+}()
 
 export { fatBeagle, vegan }
