@@ -5,7 +5,7 @@ import Counter from '../lib/counter.mjs'
 const BiggerBark = new class extends Upgrade { // A bigger bark.
   constructor () { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
-    this.count = new Counter('assets/bark.png')
+    this.count = new Counter('assets/bark.png', 'Bruhs on click')
     this.strength = localStorage.getItem('beagleStr') || 1 // load the strengthadd to body
 
     document.getElementById('beagle').addEventListener('click', () => { // Add the actual upgrade; this gives you the bigger bark.
