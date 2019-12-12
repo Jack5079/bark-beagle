@@ -72,14 +72,23 @@ details div {
   display: inline-block
 }
 
-#counter::before {
+.counter::before {
   content: 'B:';
   margin-right: 1em;
   color: transparent;
-  background-image: url(assets/speaker.jpg);
-  background-size: cover;
   border-radius: 10em;
 }
+
+#strength:before, #width:before {
+  color: white;
+  margin: auto;
+  content: 'Bruh strength: '
+}
+#counter::before {
+  background-image: url(assets/speaker.jpg);
+  background-size: cover;
+}
+
 .price:after {
   content: ' bruhs'
 }
@@ -89,10 +98,6 @@ details div {
 }
 
 
-
-#strength:before {
-  content: 'Bruh strength: '
-}
 
 #beagle {
   position: fixed;
