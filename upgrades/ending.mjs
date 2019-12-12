@@ -11,7 +11,7 @@ class Ending extends Upgrade {
 
   onbuy () {
     const credits = document.createElement('div')
-    credits.style.background = 'black'
+    credits.style = 'backdrop-filter: blur(50px)'
     credits.style.color = 'white'
     credits.style.position = 'fixed'
     credits.style.borderRadius = '1em'
