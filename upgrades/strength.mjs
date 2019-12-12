@@ -1,15 +1,12 @@
 /* global localStorage */
 import Upgrade from '../lib/upgrade.mjs'
 import inc from '../lib/inc.mjs'
-
+import Counter from '../lib/counter.mjs'
 const BiggerBark = new class extends Upgrade { // A bigger bark.
   constructor () { // Runs on load.
     super() // MUST PUT SUPER FOR UPGRADES TO WORK
-    const strengthtml = document.createElement('span') // the html counter
-    strengthtml.id = 'strength' // add the id
-    strengthtml.innerText = localStorage.getItem('beagleStr') || 1 // load the strength
-    strengthtml.classList.add('counter') // add counter class
-    document.body.appendChild(strengthtml) // add to body
+    this.count = new Counter('assets/bark.png')
+    this.strength = localStorage.getItem('beagleStr') || 1 // load the strengthadd to body
 
     document.getElementById('beagle').addEventListener('click', () => { // Add the actual upgrade; this gives you the bigger bark.
       inc(this.strength - 1) // add strength - 1 to the bruh count (- 1 is so we can account for the builtin onclick)
@@ -17,11 +14,11 @@ const BiggerBark = new class extends Upgrade { // A bigger bark.
   }
 
   get strength () {
-    return +document.getElementById('strength').innerText // return the bruh strength innertext
+    return +this.count.count // return the bruh strength innertext
   }
 
   set strength (amount) {
-    document.getElementById('strength').innerText = +amount // set the innertext
+    this.count.count = amount // set the innertext
     localStorage.setItem('beagleStr', +amount) // save it
   }
 

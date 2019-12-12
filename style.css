@@ -79,11 +79,6 @@ details div {
   border-radius: 10em;
 }
 
-#strength:before, #width:before {
-  color: white;
-  margin: auto;
-  content: 'Bruh strength: '
-}
 #counter::before {
   background-image: url(assets/speaker.jpg);
   background-size: cover;
