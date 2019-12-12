@@ -72,6 +72,15 @@ details div {
   display: inline-block
 }
 
+#counter::before {
+  width: 2em;
+  content: 'B:';
+  margin-right: 1em;
+  color: transparent;
+  background-image: url(assets/speaker.jpg);
+  background-size: contain;
+  border-radius: 10em;
+}
 .price:after {
   content: ' bruhs'
 }
@@ -80,9 +89,7 @@ details div {
   content: 'Costs '
 }
 
-#counter:before {
-  content: 'Bruh count: '
-}
+
 
 #strength:before {
   content: 'Bruh strength: '
