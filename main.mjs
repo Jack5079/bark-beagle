@@ -12,6 +12,10 @@ import './upgrades/ending.mjs'
 import './achivements/firstBruh.mjs'
 import './achivements/bagel.mjs'
 
+function chance (chance) {
+  return _ => ((Math.floor(Math.random() * chance) + 1) === 1)
+}
+const bruhchance = chance(500)
 load((+localStorage.getItem('beagleSave')) || 0)
 
 const audio = new Audio('./assets/sound.mp3') // play a bruh sound
@@ -20,7 +24,7 @@ document.getElementById('beagle').addEventListener('click', () => { // When the 
   audio.currentTime = 0 // Go back to the start
   audio.play() // Play the sound
   audio.onplay = () => { // When it starts
-    if ((Math.floor(Math.random() * 500) + 1) === 20) { // 1 in 50 chance
+    if (bruhchance()) { // 1 in 50 chance
       document.getElementById('beagle').src = './assets/bagel.webp'
     } else document.getElementById('beagle').src = './assets/bark.webp' // Switch to the barking picture if it wasn't the bagel
   }
