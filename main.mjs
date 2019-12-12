@@ -1,8 +1,7 @@
 /* global localStorage, Audio */
 
 import load from './lib/inc.mjs' // Load the counter
-
-// Import the upgrades
+import Counter from './lib/counter.mjs'// Import the upgrades
 import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
 import './upgrades/strength.mjs' // bigger bark
 import './upgrades/autobruh.mjs' // auto bruh
