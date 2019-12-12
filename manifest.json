@@ -2,20 +2,19 @@
   "dir": "ltr",
   "lang": "English",
   "name": "Bruh Beagle 2",
-  "scope": "/bruh-beagle-2/",
+  "scope": "./",
   "display": "standalone",
-  "start_url": "https://jack5079.tk/bruh-beagle-2/",
+  "start_url": ".",
   "short_name": "Bruh Beagle 2",
   "theme_color": "#77533A",
   "description": "Bruh Beagle 2 is here, with faster loading times and more!",
   "orientation": "any",
   "background_color": "#000000",
-  "related_applications": "",
-  "prefer_related_applications": "false",
-  "generated": "true",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "icons": [
     {
-      "src": "https://jack5079.tk/bruh-beagle-2/assets/beg.png",
+      "src": "./assets/beg.png",
       "sizes": "512x512"
     }
   ]
