@@ -1,5 +1,6 @@
 /* global localStorage */
 import Upgrade from '../lib/upgrade.mjs'
+import Counter from '../lib/counter.mjs'
 
 const fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
   meta () { // Info about your upgrade.
@@ -12,13 +13,9 @@ const fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
 
   constructor () { // when upgrade is added to game
     super()
-    const strengthtml = document.createElement('span') // the html counter
-    strengthtml.id = 'width' // add the id
-    document.body.appendChild(strengthtml) // add to body
-
+    this.count = new Counter('assets/width.png')
     this.width = localStorage.getItem('width') || 1 // load the width
-    strengthtml.innerText = this.width // load the strength
-    strengthtml.classList.add('counter') // add counter class
+    this.count.count = this.width // load the strength
     if (this.width >= 24879600) this.hide()
   }
 
@@ -45,7 +42,7 @@ const fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
 
     localStorage.setItem('width', +amount)
 
-    document.getElementById('width').innerText = +amount
+    this.count.count = +amount
   }
 }()
 
