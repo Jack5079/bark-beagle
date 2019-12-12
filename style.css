@@ -73,12 +73,11 @@ details div {
 }
 
 #counter::before {
-  width: 2em;
   content: 'B:';
   margin-right: 1em;
   color: transparent;
   background-image: url(assets/speaker.jpg);
-  background-size: contain;
+  background-size: cover;
   border-radius: 10em;
 }
 .price:after {
