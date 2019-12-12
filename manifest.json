@@ -14,7 +14,7 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "./assets/beg.png",
+      "src": "./assets/beg.webp",
       "sizes": "512x512"
     }
   ]
