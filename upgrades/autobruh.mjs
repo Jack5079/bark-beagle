@@ -1,3 +1,4 @@
+/* global localStorage */
 import Upgrade from '../lib/upgrade.mjs'
 import increase from '../lib/inc.mjs'
 class AutoBruh extends Upgrade {
@@ -9,14 +10,15 @@ class AutoBruh extends Upgrade {
     }
   }
 
-  constructor() {
+  constructor () {
     super()
     for (let i = 0; i < this.bruhs; i++) {
-      setInterval(() => { increase(+document.getElementById('strength').innerText) }, 1000)
+      setInterval(() => { increase(this.bruhs) }, 1000)
     }
   }
+
   onbuy () {
-    setInterval(() => { increase(+document.getElementById('strength').innerText) }, 1000)
+    setInterval(() => { increase(this.bruhs) }, 1000)
     this.bruhs++
     this.price *= 1.5
   }
@@ -30,5 +32,4 @@ class AutoBruh extends Upgrade {
   }
 }
 
-
-export default new AutoBruh
+export default new AutoBruh()
