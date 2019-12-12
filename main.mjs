@@ -21,9 +21,9 @@ document.getElementById('beagle').addEventListener('click', () => { // When the 
   audio.play() // Play the sound
   audio.onplay = () => { // When it starts
     if ((Math.floor(Math.random() * 500) + 1) === 20) { // 1 in 50 chance
-      document.getElementById('beagle').src = './assets/bagel.jpg'
-    } else document.getElementById('beagle').src = './assets/bark.png' // Switch to the barking picture if it wasn't the bagel
+      document.getElementById('beagle').src = './assets/bagel.webp'
+    } else document.getElementById('beagle').src = './assets/bark.webp' // Switch to the barking picture if it wasn't the bagel
   }
-  audio.onended = _ => { document.getElementById('beagle').src = './assets/beg.png' } // Switch to the begging picture (the default)
+  audio.onended = _ => { document.getElementById('beagle').src = './assets/beg.webp' } // Switch to the begging picture (the default)
   load(1) // add 1 to the bruh count
 })

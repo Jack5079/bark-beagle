@@ -80,7 +80,7 @@ details div {
 }
 
 #counter::before {
-  background-image: url(assets/speaker.jpg);
+  background-image: url(assets/speaker.webp);
   background-size: cover;
 }
 
