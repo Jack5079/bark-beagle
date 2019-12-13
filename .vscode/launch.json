@@ -10,7 +10,7 @@
         "run-script",
         "serve"
       ],
-      "port": 3000,
+      "port": 0,
       "skipFiles": [
         "<node_internals>/**"
       ]
