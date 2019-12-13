@@ -1,17 +1,20 @@
 {
   "version": "0.2.0",
-  "configurations": [{
-    "type": "node",
-    "request": "launch",
-    "name": "Open Live Server",
-    "runtimeExecutable": "npm",
-    "runtimeArgs": [
-      "run-script",
-      "serve"
-    ],
-    "skipFiles": [
-      "<node_internals>/**"
-    ]
-  }],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Open Live Server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "serve"
+      ],
+      "port": 3000,
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ],
   "compounds": []
 }
