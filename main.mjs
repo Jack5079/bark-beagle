@@ -8,9 +8,9 @@ import load from './lib/inc.mjs' // Load the counter increase
 
 // Load upgrades
 import './upgrades/autobruh.mjs' // auto bruh
-import './upgrades/ending.mjs'
-import './upgrades/strength.mjs' // bigger bark
-import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
+import './upgrades/biggerbark.mjs' // bigger bark
+import './upgrades/credits.mjs'
+import './upgrades/fat.mjs' // make bruh beagle fat & vegan diet
 
 function chance (chance) {
   return _ => ((Math.floor(Math.random() * chance) + 1) === 1)
