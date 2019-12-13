@@ -18,8 +18,7 @@ button:active {
 }
 
 #expandables {
-  bottom: 0.3em;
-  position: absolute;
+  float: right;
 }
 
 details {
@@ -79,10 +78,6 @@ details div {
   border-radius: 10em;
 }
 
-#counter::before {
-  background-image: url(assets/speaker.webp);
-  background-size: cover;
-}
 
 .price:after {
   content: ' bruhs'
