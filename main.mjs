@@ -1,16 +1,16 @@
 /* global localStorage, Audio */
 
-import load from './lib/inc.mjs' // Load the counter
+// Import the achivements
+import './achivements/bagel.mjs'
+import './achivements/firstBruh.mjs'
 
-// Import the upgrades
-import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
-import './upgrades/strength.mjs' // bigger bark
+import load from './lib/inc.mjs' // Load the counter increase
+
+// Load upgrades
 import './upgrades/autobruh.mjs' // auto bruh
 import './upgrades/ending.mjs'
-
-// Import the achivements
-import './achivements/firstBruh.mjs'
-import './achivements/bagel.mjs'
+import './upgrades/strength.mjs' // bigger bark
+import './upgrades/width.mjs' // make bruh beagle fat & vegan diet
 
 function chance (chance) {
   return _ => ((Math.floor(Math.random() * chance) + 1) === 1)

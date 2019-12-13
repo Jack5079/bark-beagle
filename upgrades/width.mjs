@@ -1,6 +1,6 @@
 /* global localStorage */
-import Upgrade from '../lib/upgrade.mjs'
 import Counter from '../lib/counter.mjs'
+import Upgrade from '../lib/upgrade.mjs'
 
 const fatBeagle = new class extends Upgrade { // All upgrades extend Upgrade.
   meta () { // Info about your upgrade.
