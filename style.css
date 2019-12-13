@@ -31,10 +31,11 @@ details {
   z-index: 10;
   width: 10em;
   backdrop-filter: blur(50px);
-  transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  top: 100%;
 }
 
 details[open] {
+  transition: top ease-out 0.7s;
   height: 100%;
   width: 100%;
   border-radius: 0;
@@ -76,7 +77,6 @@ details div {
   border-radius: 10em;
 }
 
-
 .price:after {
   content: ' bruhs'
 }
@@ -84,8 +84,6 @@ details div {
 .price:before {
   content: 'Costs '
 }
-
-
 
 #beagle {
   position: fixed;
