@@ -53,7 +53,10 @@ details[open] summary {
 }
 
 details article {
-  float: left;
+  backdrop-filter: blur(10px);
+  border-radius: 1em;
+  margin: 1em;
+  display: inline-block;
   padding: 1em;
   font-size: 1em;
   width: max-content;
