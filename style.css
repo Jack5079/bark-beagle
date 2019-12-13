@@ -52,7 +52,7 @@ details[open] summary {
   padding-right: 1em;
 }
 
-details div {
+details article {
   float: left;
   padding: 1em;
   font-size: 1em;
