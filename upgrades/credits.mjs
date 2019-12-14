@@ -13,7 +13,7 @@ class Ending extends Upgrade {
     const credits = document.createElement('div')
     credits.style = 'backdrop-filter: blur(50px)'
     credits.style.color = 'white'
-    credits.style.position = 'fixed'
+    credits.style.display = 'inline-block'
     credits.style.borderRadius = '1em'
     credits.innerText = 'made by jack5079 - haha beagle funny'
 
