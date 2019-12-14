@@ -12,9 +12,7 @@ class AutoBruh extends Upgrade {
 
   constructor () {
     super()
-    for (let i = 0; i < this.bruhs; i++) {
-      setInterval(() => { increase(this.bruhs) }, 1000)
-    }
+    for (let i = 0; i < this.bruhs; i++) setInterval(() => { increase(this.bruhs) }, 1000)
   }
 
   onbuy () {
