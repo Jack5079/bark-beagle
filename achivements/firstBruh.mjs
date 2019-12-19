@@ -1,7 +1,10 @@
 import Achivement from '../lib/achivement.mjs'
 import getBruh from '../lib/inc.mjs'
-
-const firstBruh = new Achivement('First bruh', 'Click the beagle for the first time')
+import { currency } from '../config.mjs'
+const firstBruh = new Achivement(
+  'First ' + currency,
+  'Click the beagle for the first time'
+)
 
 document.getElementById('beagle').addEventListener('click', () => {
   if (getBruh(0) === 0) {
