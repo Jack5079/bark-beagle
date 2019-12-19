@@ -5,13 +5,13 @@ import './achivements/bagel.mjs'
 import './achivements/firstBruh.mjs'
 
 import load from './lib/inc.mjs' // Load the counter increase
-import { sound } from './config.mjs'
 // Load upgrades
 import './upgrades/autobruh.mjs' // auto bruh
 import './upgrades/biggerbark.mjs' // bigger bark
 import './upgrades/credits.mjs'
 import './upgrades/fat.mjs' // make bruh beagle fat & vegan diet
 
+const sound = './assets/sound.mp3' // Path to the "Bruh!" sound
 function chance (chance) {
   return _ => Math.floor(Math.random() * chance) + 1 === 1
 }
