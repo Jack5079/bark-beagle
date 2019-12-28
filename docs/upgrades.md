@@ -1,6 +1,6 @@
-_Go to [Bruh Beagle Upgrade Maker](https://jack5079.github.io/bruh-beagle-upgrade-maker) if you don't want to learn all of this_
-
 # How to make upgrades for Bruh Beagle 2
+
+_Go to [Bruh Beagle Upgrade Maker](https://jack5079.github.io/bruh-beagle-upgrade-maker) if you don't want to learn all of this_
 
 Upgrades are classes extending `Upgrade`
 
