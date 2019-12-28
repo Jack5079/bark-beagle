@@ -1,4 +1,5 @@
-*Go to [Bruh Beagle Upgrade Maker](https://jack5079.github.io/bruh-beagle-upgrade-maker) if you don't want to learn all of this*
+_Go to [Bruh Beagle Upgrade Maker](https://jack5079.github.io/bruh-beagle-upgrade-maker) if you don't want to learn all of this_
+
 # How to make upgrades for Bruh Beagle 2
 
 Upgrades are classes extending `Upgrade`
@@ -13,9 +14,9 @@ Upgrades are classes extending `Upgrade`
 
 Upgrades must have:
 
-1. `meta` method
+### `meta` argument
 
-The `meta` method returns a object, which stores data like:
+The `meta` argument is an object, which stores data like:
 
 - A name
 - A description (Optional)
@@ -24,16 +25,14 @@ The `meta` method returns a object, which stores data like:
 They look something like this:
 
 ```js
-meta () {
-      return {
-        name: 'Reload the page, please!',
-        desc: 'This will reload the page.',
-        startprice: 10
-      }
-}
-  ```
+new MyUpgrade({
+  name: 'Reload the page, please!',
+  desc: 'This will reload the page.',
+  startprice: 10
+})
+```
 
-2. `onbuy` method
+### `onbuy` method
 
 `onbuy` is called whenever the upgrade is bought.
 
@@ -59,22 +58,17 @@ Right click the background, and press "Inspect". Click console. Now, let's defin
 This class should extend `Upgrade`.
 
 ```js
-  new class Reload extends Upgrade {
-  }
+new (class Reload extends Upgrade {})()
 ```
 
 Now, we need some meta info.
 
 ```js
-  new class Reload extends Upgrade {
-    meta () { // Info about this upgrade.
-      return {
-        name: 'Reload the page, please!',
-        desc: 'This will reload the page.',
-        startprice: 10
-      }
-    }
-  }
+new (class Reload extends Upgrade {})({
+  name: 'Reload the page, please!',
+  desc: 'This will reload the page.',
+  startprice: 10
+})
 ```
 
 Now, this should add an upgrade to the list. However, nothing happens when you buy it!
@@ -82,21 +76,17 @@ Now, this should add an upgrade to the list. However, nothing happens when you b
 We gotta add functionality.
 
 ```js
-  new class Reload extends Upgrade {
-     meta () { // Info about this upgrade.
-      return {
-        name: 'Reload the page, please!',
-        desc: 'This will reload the page.',
-        startprice: 10
-      }
-    }
-
-    onbuy () { // When the user buys our upgrade with bruhs.
-      this.price *= 1.5 // Change the price.
-      location.reload() // Reload the page.
-    }
+new (class Reload extends Upgrade {
+  onbuy () {
+    // When the user buys our upgrade with bruhs.
+    this.price *= 1.5 // Change the price.
+    location.reload() // Reload the page.
   }
+})({
+  name: 'Reload the page, please!',
+  desc: 'This will reload the page.',
+  startprice: 10
+})
 ```
 
 Now, run this in the console, and you now have your own upgrade!
-

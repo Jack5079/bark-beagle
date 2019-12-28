@@ -4,11 +4,11 @@ import inc from '../lib/inc.mjs'
 import Counter from '../lib/counter.mjs'
 import { currency, currencyPlural } from '../config.mjs'
 
-const BiggerBark = new (class extends Upgrade {
+class BiggerBark extends Upgrade {
   // A bigger bark.
-  constructor () {
+  constructor (...args) {
     // Runs on load.
-    super() // MUST PUT SUPER FOR UPGRADES TO WORK
+    super(...args) // MUST PUT SUPER FOR UPGRADES TO WORK
     this.count = new Counter(
       'assets/bark.webp',
       `${currencyPlural} on click`,
@@ -36,15 +36,10 @@ const BiggerBark = new (class extends Upgrade {
     this.price *= 1.5 // almost double the price
     this.strength++ // add to the strength
   }
+}
 
-  meta () {
-    // info about bigger bark
-    return {
-      name: `Bigger ${currency}`,
-      desc: `Increases your ${currency} strength (${currencyPlural} on click) by one.`,
-      startprice: 30
-    }
-  }
-})()
-
-export default BiggerBark
+export default new BiggerBark({
+  name: `Bigger ${currency}`,
+  desc: `Increases your ${currency} strength (${currencyPlural} on click) by one.`,
+  startprice: 30
+})

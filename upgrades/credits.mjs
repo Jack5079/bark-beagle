@@ -1,14 +1,6 @@
 import Upgrade from '../lib/upgrade.mjs'
 
 class Ending extends Upgrade {
-  meta () {
-    return {
-      name: 'See the credits',
-      desc: 'You win!',
-      startprice: 69420
-    }
-  }
-
   onbuy () {
     const credits = document.createElement('div')
     credits.style = 'backdrop-filter: blur(50px)'
@@ -27,4 +19,8 @@ class Ending extends Upgrade {
   }
 }
 
-export default new Ending()
+export default new Ending({
+  name: 'See the credits',
+  desc: 'You win!',
+  startprice: 69420
+})

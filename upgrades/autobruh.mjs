@@ -3,16 +3,8 @@ import Upgrade from '../lib/upgrade.mjs'
 import increase from '../lib/inc.mjs'
 import { currency } from '../config.mjs'
 class AutoBruh extends Upgrade {
-  meta () {
-    return {
-      name: `Auto ${currency}`,
-      desc: `Increases your ${currency} count by one, every second.`,
-      startprice: 30
-    }
-  }
-
-  constructor () {
-    super()
+  constructor (...args) {
+    super(...args)
     for (let i = 0; i < this.bruhs; i++) {
       setInterval(() => {
         increase(this.bruhs)
@@ -37,4 +29,8 @@ class AutoBruh extends Upgrade {
   }
 }
 
-export default new AutoBruh()
+export default new AutoBruh({
+  name: `Auto ${currency}`,
+  desc: `Increases your ${currency} count by one, every second.`,
+  startprice: 30
+})
