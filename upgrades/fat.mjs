@@ -31,11 +31,11 @@ const fatBeagle = new (class extends Upgrade {
   set width (amount) {
     const beagle = document.getElementById('beagle')
 
-    beagle.style.transform = `scaleX(${+amount})`
+    beagle.style.transform = `scaleX(${amount})`
 
     localStorage.setItem('width', +amount)
 
-    this.count.count = +amount
+    this.count.count = Math.round(amount)
   }
 })({
   name: 'make bruh beagle fat',
