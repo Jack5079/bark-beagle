@@ -54,7 +54,17 @@ They look like this:
 
 ## Your first upgrade
 
-Right click the background, and press "Inspect". Click console. Now, let's define a new class.
+Right click the background, and press "Inspect". Click console.
+
+Before we start, we need to import Upgrade:
+
+```js
+import('./lib/upgrade.mjs').then(mod => {
+  globalThis.Upgrade = mod.default
+})
+```
+
+Now, let's define a new class.
 This class should extend `Upgrade`.
 
 ```js
