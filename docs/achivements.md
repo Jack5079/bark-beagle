@@ -4,7 +4,7 @@
 // If you can't make upgrades, then achivements are for you!
 import('./lib/achivement.mjs').then(module => {
   const myAchivement = new module.default('My achivement', "It's epic!")
-  // Now, just change myAchivement.progress to something between 0 and 100. 
+  // Now, just change myAchivement.progress to something between 0 and 100.
   // Setting it to 100 will make a notification appear
 }) // Import achivement
 ```

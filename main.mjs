@@ -10,6 +10,7 @@ import './upgrades/autobruh.mjs' // auto bruh
 import './upgrades/biggerbark.mjs' // bigger bark
 import './upgrades/credits.mjs'
 import './upgrades/fat.mjs' // make bruh beagle fat & vegan diet
+import './upgrades/happynewyear.mjs' // Happy new year!!!
 
 const sound = './assets/sound.mp3' // Path to the "Bruh!" sound
 function chance (chance) {
