@@ -1,8 +1,8 @@
 {
-  "name": "bruh-beagle-2",
+  "name": "bark-beagle",
   "version": "1.0.0",
-  "description": "Bruh! A game where you just click a dog and makes a bruh sound. That's it. Not joking.",
+  "description": "Bark Beagle - the weirdest idle clicker ever made",
   "main": "index.html",
-  "repository": "https://github.com/Jack5079/bruh-beagle-2.git",
+  "repository": "https://github.com/Jack5079/bark-beagle.git",
   "author": "Jack <29169102+Jack5079@users.noreply.github.com>"
 }

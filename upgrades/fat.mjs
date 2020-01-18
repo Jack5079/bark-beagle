@@ -38,7 +38,7 @@ const fatBeagle = new (class extends Upgrade {
     this.count.count = Math.round(amount)
   }
 })({
-  name: 'make bruh beagle fat',
+  name: 'make bark beagle fat',
   desc: 'working 2013',
   startprice: 10
 })
@@ -53,7 +53,7 @@ const vegan = new (class extends Upgrade {
   }
 })({
   name: 'go on a vegan diet',
-  desc: 'how to make bruh beagle not fat (working 2011)',
+  desc: 'how to make bark beagle not fat (working 2011)',
   startprice: 10
 })
 

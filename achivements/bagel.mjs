@@ -1,6 +1,9 @@
 import Achivement from '../lib/achivement.mjs'
 
-const bagelAch = new Achivement('Bruh Bagel', 'See the super rare bagel for the first time')
+const bagelAch = new Achivement(
+  'Bark Bagel',
+  'See the super rare bagel for the first time'
+)
 
 document.getElementById('beagle').addEventListener('click', () => {
   setTimeout(() => {

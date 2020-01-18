@@ -19,7 +19,7 @@ function chance (chance) {
 const bruhchance = chance(500)
 load(+localStorage.getItem('beagleSave') || 0)
 
-const audio = new Audio(sound) // play a bruh sound
+const audio = new Audio(sound) // play a bark sound
 // onclick
 document.getElementById('beagle').addEventListener('click', () => {
   // When the user clicks
