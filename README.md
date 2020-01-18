@@ -1,6 +1,6 @@
-# Bruh Beagle 2
+# Bark Beagle
 
-The next generation of Bruh Beagle
+the weirdest idle clicker ever made
 
 ## file size notes
 
@@ -9,5 +9,5 @@ For comparsion, Super Mario Bros was 31 KB.
 
 ## Fun Facts
 
-If no code increases the bruh count, it won't show.
+If no code increases the bark count, it won't show.
 If no upgrades are loaded, the list won't be there.
