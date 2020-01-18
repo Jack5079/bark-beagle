@@ -108,3 +108,45 @@ details summary a {
 #width::before {
   content: 'Beagle width: '
 }
+
+.achivement {
+  /* all: none; */
+  background: darkslategray;
+  color: white;
+  text-align: center;
+  border-radius: 3em;
+  box-shadow: 0 0 1em lightslategray;
+  position: fixed;
+  overflow: hidden;
+  right: 1em;
+  width: 50%;
+  bottom: 50%;
+  animation: slidein 2s ease-out, slideout 2s ease-in 7s forwards;
+}
+
+.achivement::before {
+  content: 'Achivement unlocked!';
+  font-style: italic;
+}
+
+@keyframes slidein {
+  from {
+    filter: blur(50px);
+    right: -50%;
+  }
+  to {
+    filter: blur(0px);
+    right: 1em;
+  }
+}
+
+@keyframes slideout {
+  to {
+    filter: blur(50px);
+    right: -50%;
+  }
+  from {
+    filter: blur(0px);
+    right: 1em;
+  }
+}
