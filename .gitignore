@@ -3,5 +3,6 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
+.yarn/unplugged
+.yarn/build-state.yml
 node_modules/

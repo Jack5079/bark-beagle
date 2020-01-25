@@ -5,10 +5,10 @@
   "main": "index.html",
   "repository": "https://github.com/Jack5079/bark-beagle.git",
   "author": "Jack <29169102+Jack5079@users.noreply.github.com>",
-  "devDependencies": {
-    "lite-server": "^2.5.4"
-  },
   "scripts": {
-    "dev": "lite-server"
+    "dev": "serve"
+  },
+  "devDependencies": {
+    "serve": "^11.3.0"
   }
 }
