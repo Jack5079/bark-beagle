@@ -1,5 +1,6 @@
 {
   "recommendations": [
     "ritwickdey.LiveServer",
+    "chenxsan.vscode-standardjs"
   ]
 }
