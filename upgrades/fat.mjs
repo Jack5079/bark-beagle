@@ -13,14 +13,6 @@ const fatBeagle = new (class extends Upgrade {
     if (this.width >= 24879600) this.hide()
   }
 
-  onbuy () {
-    // When your upgrade is bought
-    this.width *= 1.5 // make the beagle fat
-    this.price *= 1.1 // increase the price
-
-    if (this.width >= 24879600) this.hide() // if the beagle is gone then hide the upgrade
-  }
-
   get width () {
     const beagle = document.getElementById('beagle')
 
@@ -43,18 +35,23 @@ const fatBeagle = new (class extends Upgrade {
   startprice: 10
 })
 
-const vegan = new (class extends Upgrade {
-  // All upgrades extend Upgrade.
-  onbuy () {
-    // When your upgrade is bought
-    fatBeagle.width = 1 // reset width
-    fatBeagle.show() // show the upgrade
-    this.price *= 1.1 // increase price
-  }
-})({
+fatBeagle.addEventListener('buy', function () {
+  // When your upgrade is bought
+  this.width *= 1.5 // make the beagle fat
+  this.price *= 1.1 // increase the price
+
+  if (this.width >= 24879600) this.hide() // if the beagle is gone then hide the upgrade
+})
+
+const vegan = new Upgrade({
   name: 'go on a vegan diet',
   desc: 'how to make bark beagle not fat (working 2011)',
   startprice: 10
 })
-
+vegan.addEventListener('buy', function () {
+  // When your upgrade is bought
+  fatBeagle.width = 1 // reset width
+  fatBeagle.show() // show the upgrade
+  this.price *= 1.1 // increase pric
+})
 export { fatBeagle, vegan }

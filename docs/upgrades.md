@@ -32,22 +32,22 @@ new MyUpgrade({
 })
 ```
 
-### `onbuy` method
+### `buy` event
 
-`onbuy` is called whenever the upgrade is bought.
+`buy` is called whenever the upgrade is bought.
 
 This is probably where you will activate your effects, and change `this.price`.
 
 They look like this:
 
 ```js
-    onbuy () {
-      this.price *= 1.5 // Change the price.
-      location.reload() // Reload the page.
-    }
+upgrade.addEventListener('buy', function () {
+  this.price *= 1.5 // Change the price.
+  location.reload() // Reload the page.
+})
 ```
 
-`onbuy` will only be called when all these conditions are met:
+`buy` will only be dispatched when all these conditions are met:
 
 - The user has enough bruhs to buy your upgrade at your price
 - They press the buy button
@@ -64,17 +64,17 @@ import('./lib/upgrade.mjs').then(mod => {
 })
 ```
 
-Now, let's define a new class.
+Now, let's define a new Upgrade.
 This class should extend `Upgrade`.
 
 ```js
-new (class Reload extends Upgrade {})()
+const up = new Upgrade()
 ```
 
 Now, we need some meta info.
 
 ```js
-new (class Reload extends Upgrade {})({
+const up = new Upgrade({
   name: 'Reload the page, please!',
   desc: 'This will reload the page.',
   startprice: 10
@@ -86,16 +86,16 @@ Now, this should add an upgrade to the list. However, nothing happens when you b
 We gotta add functionality.
 
 ```js
-new (class Reload extends Upgrade {
-  onbuy () {
-    // When the user buys our upgrade with bruhs.
-    this.price *= 1.5 // Change the price.
-    location.reload() // Reload the page.
-  }
-})({
+const up = new Upgrade({
   name: 'Reload the page, please!',
   desc: 'This will reload the page.',
   startprice: 10
+})
+
+up.addEventListener('buy', function () {
+  // When the user buys our upgrade with bruhs.
+  this.price *= 1.5 // Change the price.
+  location.reload() // Reload the page.
 })
 ```
 

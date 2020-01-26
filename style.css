@@ -29,8 +29,8 @@ details {
   height: 1em;
   z-index: 10;
   width: 10em;
-  backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
   top: 100%;
 }
 
@@ -104,12 +104,7 @@ details summary a {
   background: white;
 }
 
-#width::before {
-  content: 'Beagle width: '
-}
-
 .achivement {
-  /* all: none; */
   background: darkslategray;
   color: white;
   text-align: center;
@@ -130,26 +125,26 @@ details summary a {
 
 @keyframes slidein {
   from {
-    filter: blur(50px);
     -webkit-filter: blur(50px);
+    filter: blur(50px);
     right: -50%;
   }
   to {
-    filter: blur(0px);
     -webkit-filter: blur(0px);
+    filter: blur(0px);
     right: 1em;
   }
 }
 
 @keyframes slideout {
   to {
-    filter: blur(50px);
     -webkit-filter: blur(50px);
+    filter: blur(50px);
     right: -50%;
   }
   from {
-    filter: blur(0px);
     -webkit-filter: blur(0px);
+    filter: blur(0px);
     right: 1em;
   }
 }
