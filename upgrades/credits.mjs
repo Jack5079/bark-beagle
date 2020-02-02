@@ -18,7 +18,7 @@ up.addEventListener('buy', () => {
   const exit = document.createElement('button')
   exit.innerText = 'Close'
   exit.style.float = 'right'
-  exit.addEventListener('click', _ => credits.remove())
+  exit.addEventListener('click', credits.remove.bind(credits))
   credits.appendChild(exit)
   document.body.appendChild(credits)
 })

@@ -3,8 +3,10 @@
 // Import the achivements
 import './achivements/bagel.mjs'
 import './achivements/firstBruh.mjs'
+import './achivements/ogBruh.mjs'
 
 import load from './lib/inc.mjs' // Load the counter increase
+
 // Load upgrades
 import './upgrades/autobruh.mjs' // auto bruh
 import './upgrades/biggerbark.mjs' // bigger bark
