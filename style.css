@@ -68,7 +68,7 @@ details article {
   margin: 0.1em;
   color: white;
   border-radius: 0.5em;
-  background: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 30px black;
   display: inline-block
 }
 
