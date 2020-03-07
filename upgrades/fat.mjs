@@ -10,6 +10,7 @@ const fatBeagle = new (class extends Upgrade {
     this.count = new Counter('assets/width.webp', 'Beagle width', 'x')
     this.width = localStorage.getItem('width') || 1 // load the width
     this.count.count = this.width // load the strength
+    if (this.width <= 1) this.count.hide()
     if (this.width >= 24879600) this.hide()
   }
 
@@ -39,7 +40,7 @@ fatBeagle.addEventListener('buy', function () {
   // When your upgrade is bought
   this.width *= 1.5 // make the beagle fat
   this.price *= 1.1 // increase the price
-
+  this.count.show()
   if (this.width >= 24879600) this.hide() // if the beagle is gone then hide the upgrade
 })
 
