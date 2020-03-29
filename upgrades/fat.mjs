@@ -18,9 +18,9 @@ const fatBeagle = new class extends Upgrade {
   }
 
   get width () {
-    const beagle = document.getElementById('beagle'),
+    const beagle = document.getElementById('beagle')
 
-      style = beagle.style.transform || 'scaleX(1)'
+    const style = beagle.style.transform || 'scaleX(1)'
     return +style.replace('scaleX(', '').replace(')', '')
   }
 
