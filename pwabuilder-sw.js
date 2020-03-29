@@ -1,4 +1,4 @@
-/* globals self, fetch, caches, Response */
+/* global Promise */
 // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
 const CACHE = 'pwabuilder-offline-page'
@@ -25,7 +25,9 @@ self.addEventListener('install', function (event) {
 
 // If any fetch fails, it will look for the request in the cache and serve it from there first
 self.addEventListener('fetch', function (event) {
-  if (event.request.method !== 'GET') return
+  if (event.request.method !== 'GET') {
+    return
+  }
 
   event.respondWith(
     fetch(event.request)
