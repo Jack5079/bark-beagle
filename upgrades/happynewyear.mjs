@@ -1,4 +1,3 @@
-/* global SpeechSynthesisUtterance, speechSynthesis */
 import Upgrade from '../lib/upgrade.mjs'
 
 const date = new Date()
@@ -6,7 +5,7 @@ const date = new Date()
 export default (() => {
   if (date.getDate() === 1 && date.getMonth() === 0) {
     return new Upgrade({
-      name: "It's " + date.getFullYear(),
+      name: 'It\'s ' + date.getFullYear(),
       desc: 'Happy new year!',
       startprice: 0
     }).addEventListener('buy', () =>
@@ -16,5 +15,7 @@ export default (() => {
         )
       )
     )
-  } else return undefined
+  } else {
+    return undefined
+  }
 })()

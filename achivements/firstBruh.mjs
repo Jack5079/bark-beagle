@@ -6,6 +6,6 @@ const firstBruh = new Achivement(
 )
 
 document.getElementById('beagle').addEventListener('click', () => {
-    firstBruh.progress = 100
+  firstBruh.progress = 100
 })
 export default firstBruh

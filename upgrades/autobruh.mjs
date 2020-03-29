@@ -1,7 +1,6 @@
-/* global localStorage */
 import Upgrade from '../lib/upgrade.mjs'
-import increase from '../lib/inc.mjs'
 import { currency } from '../config.mjs'
+import increase from '../lib/inc.mjs'
 
 let bruhs = +localStorage.getItem('autobruhs') || 0
 

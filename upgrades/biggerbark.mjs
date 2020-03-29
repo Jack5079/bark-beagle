@@ -1,8 +1,7 @@
-/* global localStorage */
-import Upgrade from '../lib/upgrade.mjs'
-import inc from '../lib/inc.mjs'
 import Counter from '../lib/counter.mjs'
+import Upgrade from '../lib/upgrade.mjs'
 import { currency, currencyPlural } from '../config.mjs'
+import inc from '../lib/inc.mjs'
 let strength = +localStorage.getItem('beagleStr') || 1
 
 const up = new Upgrade({

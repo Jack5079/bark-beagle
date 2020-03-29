@@ -32,7 +32,9 @@ document.getElementById('beagle').addEventListener('click', () => {
     if (bruhchance()) {
       // 1 in 50 chance
       document.getElementById('beagle').src = './assets/bagel.webp'
-    } else document.getElementById('beagle').src = './assets/bark.webp' // Switch to the barking picture if it wasn't the bagel
+    } else {
+      document.getElementById('beagle').src = './assets/bark.webp'
+    } // Switch to the barking picture if it wasn't the bagel
   }
   audio.onended = _ => {
     document.getElementById('beagle').src = './assets/beg.webp'
