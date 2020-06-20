@@ -13,7 +13,7 @@ for (let i = 0; i < bruhs; i++) {
 const up = new Upgrade({
   name: `Auto ${currency}`,
   desc: `Increases your ${currency} count by one, every second.`,
-  startprice: 30
+  startprice: 30n
 })
 
 up.addEventListener('buy', function () {
@@ -22,5 +22,5 @@ up.addEventListener('buy', function () {
   }, 1000)
   bruhs++
   localStorage.setItem('autobruhs', bruhs)
-  this.price *= 1.5
+  this.price *= 2n
 })

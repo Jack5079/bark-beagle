@@ -3,7 +3,7 @@ import Upgrade from '../lib/upgrade.mjs'
 const up = new Upgrade({
   name: 'See the credits',
   desc: 'You win!',
-  startprice: 69420
+  startprice: 69420n
 })
 
 up.addEventListener('buy', () => {

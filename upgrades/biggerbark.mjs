@@ -7,7 +7,7 @@ let strength = +localStorage.getItem('beagleStr') || 1
 const up = new Upgrade({
   name: `Bigger ${currency}`,
   desc: `Increases your ${currency} strength (${currencyPlural} on click) by one.`,
-  startprice: 30
+  startprice: 30n
 })
 
 const count = new Counter(
@@ -23,7 +23,7 @@ document.getElementById('beagle').addEventListener('click', () => {
 
 up.addEventListener('buy', function () {
   // when they buy it
-  this.price *= 1.5 // almost double the price
+  this.price *= 2n // almost double the price
   count.count = ++strength
   localStorage.setItem('beagleStr', +strength)
 })

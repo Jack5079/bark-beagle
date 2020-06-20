@@ -29,20 +29,20 @@ const fatBeagle = new class extends Upgrade {
 
     beagle.style.transform = `scaleX(${amount})`
 
-    localStorage.setItem('width', +amount)
+    localStorage.setItem('width', BigInt(amount))
 
     this.count.count = Math.round(amount)
   }
 }({
   name: 'make bark beagle fat',
   desc: 'working 2013',
-  startprice: 10
+  startprice: 10n
 })
 
 fatBeagle.addEventListener('buy', function () {
   // When your upgrade is bought
   this.width *= 1.5 // make the beagle fat
-  this.price *= 1.1 // increase the price
+  this.price *= 2n // increase the price
   this.count.show()
   if (this.width >= 24879600) {
     this.hide()
