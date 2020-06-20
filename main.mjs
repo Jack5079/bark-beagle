@@ -19,7 +19,7 @@ function chance (chance) {
   return _ => Math.floor(Math.random() * chance) + 1 === 1
 }
 const bruhchance = chance(500)
-load(BigInt(localStorage.getItem('beagleSave')) || 0)
+load(BigInt(localStorage.getItem('beagleSave')) || 0n)
 
 const audio = new Audio(sound) // play a bark sound
 // onclick
