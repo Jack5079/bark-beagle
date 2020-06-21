@@ -1,4 +1,4 @@
-/* global localStorage, Audio */
+/* global localStorage, Audio, BigInt */
 
 // Import the achivements
 import './achivements/bagel.mjs'
@@ -15,15 +15,22 @@ import './upgrades/fat.mjs' // make bruh beagle fat & vegan diet
 import './upgrades/happynewyear.mjs' // Happy new year!!!
 
 const sound = './assets/sound.mp3' // Path to the "Bruh!" sound
+/**
+ * @param {number} chance
+ */
 function chance (chance) {
-  return _ => Math.floor(Math.random() * chance) + 1 === 1
+  return () => Math.floor(Math.random() * chance) + 1 === 1
 }
 const bruhchance = chance(500)
 load(BigInt(localStorage.getItem('beagleSave')) || 0n)
 
 const audio = new Audio(sound) // play a bark sound
+/**
+ * @type {HTMLImageElement}
+ */
+const dog = document.querySelector('img#beagle')
 // onclick
-document.getElementById('beagle').addEventListener('click', () => {
+dog.addEventListener('click', () => {
   // When the user clicks
   audio.currentTime = 0 // Go back to the start
   audio.play() // Play the sound
@@ -31,13 +38,13 @@ document.getElementById('beagle').addEventListener('click', () => {
     // When it starts
     if (bruhchance()) {
       // 1 in 50 chance
-      document.getElementById('beagle').src = './assets/bagel.webp'
+      dog.src = './assets/bagel.webp'
     } else {
-      document.getElementById('beagle').src = './assets/bark.webp'
+      dog.src = './assets/bark.webp'
     } // Switch to the barking picture if it wasn't the bagel
   }
   audio.onended = _ => {
-    document.getElementById('beagle').src = './assets/beg.webp'
+    dog.src = './assets/beg.webp'
   } // Switch to the begging picture (the default)
   load(1) // add 1 to the bruh count
 })
