@@ -7,7 +7,7 @@ const fatBeagle = new class extends Upgrade {
     // when upgrade is added to game
     super(...args)
     this.count = new Counter('assets/width.webp', 'Beagle width', 'x')
-    this.width = localStorage.getItem('width') || 1 // load the width
+    this.width = BigInt(localStorage.getItem('width')) || 1n // load the width
     this.count.count = this.width // load the strength
     if (this.width <= 1) {
       this.count.hide()
