@@ -9,10 +9,10 @@ const fatBeagle = new class extends Upgrade {
     this.count = new Counter('assets/width.webp', 'Beagle width', 'x')
     this.width = BigInt(localStorage.getItem('width') || 1) // load the width
     this.count.count = this.width // load the strength
-    if (this.width <= 1) {
+    if (this.width <= 1n) {
       this.count.hide()
     }
-    if (this.width >= 24879600) {
+    if (this.width >= 24879600n) {
       this.hide()
     }
   }
@@ -21,7 +21,7 @@ const fatBeagle = new class extends Upgrade {
     const beagle = document.getElementById('beagle')
 
     const style = beagle.style.transform || 'scaleX(1)'
-    return +style.replace('scaleX(', '').replace(')', '')
+    return BigInt(style.replace('scaleX(', '').replace(')', ''))
   }
 
   set width (amount) {
