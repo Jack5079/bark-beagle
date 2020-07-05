@@ -2,7 +2,7 @@ import Counter from '../lib/counter.mjs'
 import Upgrade from '../lib/upgrade.mjs'
 import { currency, currencyPlural } from '../config.mjs'
 import inc from '../lib/inc.mjs'
-let strength = +localStorage.getItem('beagleStr') || 1
+let strength = BigInt(localStorage.getItem('beagleStr')) || 1n
 
 const up = new Upgrade({
   name: `Bigger ${currency}`,
@@ -24,7 +24,8 @@ document.getElementById('beagle').addEventListener('click', () => {
 up.addEventListener('buy', function () {
   // when they buy it
   this.price *= 2n // almost double the price
-  count.count = ++strength
+  strength *= 2n
+  count.count = strength
   localStorage.setItem('beagleStr', +strength)
 })
 
