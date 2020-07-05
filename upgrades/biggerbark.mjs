@@ -26,7 +26,7 @@ up.addEventListener('buy', function () {
   this.price *= 2n // almost double the price
   strength *= 2n
   count.count = strength
-  localStorage.setItem('beagleStr', +strength)
+  localStorage.setItem('beagleStr', strength)
 })
 
 export default up
