@@ -18,7 +18,7 @@ const count = new Counter(
 count.count = strength
 document.getElementById('beagle').addEventListener('click', () => {
   // Add the actual upgrade; this gives you the bigger bark.
-  inc(+strength - 1) // add strength - 1 to the bruh count (- 1 is so we can account for the builtin onclick)
+  inc(strength - 1n) // add strength - 1 to the bruh count (- 1 is so we can account for the builtin onclick)
 })
 
 up.addEventListener('buy', function () {
