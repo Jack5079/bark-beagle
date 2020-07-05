@@ -41,10 +41,10 @@ const fatBeagle = new class extends Upgrade {
 
 fatBeagle.addEventListener('buy', function () {
   // When your upgrade is bought
-  this.width *= 1.5 // make the beagle fat
+  this.width *= BigInt(2)// make the beagle fat
   this.price *= 2n // increase the price
   this.count.show()
-  if (this.width >= 24879600) {
+  if (this.width >= 24879600n) {
     this.hide()
   } // if the beagle is gone then hide the upgrade
 })
