@@ -22,7 +22,7 @@ function chance (chance) {
   return () => Math.floor(Math.random() * chance) + 1 === 1
 }
 const bruhchance = chance(500)
-load(BigInt(localStorage.getItem('beagleSave')) || 1n)
+load(BigInt(localStorage.getItem('beagleSave') || 0))
 
 const audio = new Audio(sound) // play a bark sound
 /**

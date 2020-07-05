@@ -2,7 +2,7 @@ import Counter from '../lib/counter.mjs'
 import Upgrade from '../lib/upgrade.mjs'
 import { currency, currencyPlural } from '../config.mjs'
 import inc from '../lib/inc.mjs'
-let strength = BigInt(localStorage.getItem('beagleStr')) || 1n
+let strength = BigInt(localStorage.getItem('beagleStr') || 1n)
 
 const up = new Upgrade({
   name: `Bigger ${currency}`,
